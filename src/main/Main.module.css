@@ -1,0 +1,24 @@
+.mainPage {
+    min-height: 100vh;
+    background-color: #ffe3df;
+}
+.container {
+    width: 80%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    border: 1px solid;
+    flex-wrap: wrap;
+}
+
+.text {
+    width: 300px;
+    background-color: #ffceff;
+}
+.picture {
+    width: 300px;
+    height: 400px;
+    background-color: #ffceff;
+}

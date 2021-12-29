@@ -1,0 +1,13 @@
+.header {
+    height: 80px;
+    background-color: #a5fdff;
+    display: flex;
+}
+.mainBlock {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 auto;
+    border: 1px solid;
+}

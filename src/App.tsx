@@ -1,10 +1,16 @@
 import React from 'react';
-import './App.css';
+import {Header} from './header/Header';
+import {Main} from './main/Main';
+import styles from './App.module.css'
+import {Skills} from './skills/Skills';
+
 
 function App() {
   return (
-    <div className="App">
-      Hello, this is my Portfolio
+    <div className={styles.App}>
+        <Header/>
+        <Main/>
+        <Skills/>
     </div>
   );
 }
