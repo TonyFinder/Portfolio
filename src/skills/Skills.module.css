@@ -6,8 +6,8 @@
 }
 .blockSkills {
     width: 80%;
-    height: 100%;
-    border: 1px solid;
+    min-height: 100%;
+    border: 1px solid lime;
     display: flex;
     flex-direction: column;
 }
@@ -19,7 +19,6 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: flex-start;
-
 }
 h2 {
     text-align: center;
