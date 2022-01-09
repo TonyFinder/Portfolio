@@ -1,5 +1,5 @@
 .skillContainer {
-    width: 300px;
+    width: 100%;
     border: 1px solid saddlebrown;
     display: flex;
     flex-direction: column;
@@ -12,4 +12,10 @@
     width: 50px;
     height: 50px;
     background-color: #d0ffea;
+}
+
+@media screen and (min-width: 450px) {
+    .skillContainer {
+        width: 300px;
+    }
 }
