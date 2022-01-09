@@ -9,9 +9,9 @@
     border: 3px solid saddlebrown;
 }
 .pictureContainer {
-    width: 300px;
+    width: 100%;
     height: 200px;
-    background-color: #cafcff;
+    background-color: lightgreen;
     display: flex;
     justify-content: center;
     align-items: center;

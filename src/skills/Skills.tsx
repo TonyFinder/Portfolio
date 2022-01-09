@@ -7,9 +7,7 @@ export const Skills = () => {
     return (
         <div className={styles.container}>
             <div className={styles.blockSkills}>
-                <div>
-                    <h2>Skills</h2>
-                </div>
+                <h2>Skills</h2>
                 <div className={styles.skillsContainer}>
                     {store.skills.map(m => <Skill key={m.id} id={m.id} skill={m.skill} description={m.description}/>)}
                 </div>

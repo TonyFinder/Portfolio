@@ -5,9 +5,7 @@ export const Contacts = () => {
     return (
         <div className={styles.container}>
             <div className={styles.contacts}>
-                <div>
-                    <h2>Contacts</h2>
-                </div>
+                <h2>Contacts</h2>
                 <form>
                     <input/>
                     <input/>

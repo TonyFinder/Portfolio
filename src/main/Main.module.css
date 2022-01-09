@@ -18,11 +18,13 @@
 .text {
     width: 300px;
     background-color: #ffceff;
+    border: 1px solid blue;
 }
 .picture {
     width: 300px;
     height: 400px;
     background-color: #ffceff;
+    border: 1px solid blue;
 }
 
 @media screen and (min-width: 550px) {
