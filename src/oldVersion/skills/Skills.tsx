@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Skills.module.css'
-import {store} from '../store';
+import {storeOld} from '../storeOld';
 import {Skill} from './skill/Skill';
 
 export const Skills = () => {
@@ -9,7 +9,7 @@ export const Skills = () => {
             <div className={styles.blockSkills}>
                 <h2>Skills</h2>
                 <div className={styles.skillsContainer}>
-                    {store.skills.map(m => <Skill key={m.id} id={m.id} skill={m.skill} description={m.description}/>)}
+                    {storeOld.skills.map(m => <Skill key={m.id} id={m.id} skill={m.skill} description={m.description}/>)}
                 </div>
             </div>
         </div>

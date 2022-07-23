@@ -14,7 +14,7 @@ export type PortfolioType = {
     link: string
 }
 
-export const store: StoreType = {
+export const storeOld: StoreType = {
     skills: [{
         id: 1,
         skill: 'HTML & CSS',
