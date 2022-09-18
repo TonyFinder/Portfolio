@@ -57,4 +57,29 @@
       width: 0;
     }
   }
+
+  .portfolioMain {
+    position: absolute;
+    content: '';
+    background: $blocksBackground;
+    transition: 0.3s ease;
+    animation-name: portfolioBlock;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    z-index: 0;
+  }
+  @keyframes portfolioBlock {
+    0% {
+      width: calc(50vw - 30px);
+      height: calc(50vh - 30px);
+      left: 20px; bottom: 20px;
+    }
+    100% {
+      width: calc(100vw - 40px);
+      height: calc(100vh - 40px);
+      left: 20px; bottom: 20px;
+    }
+  }
+
 }

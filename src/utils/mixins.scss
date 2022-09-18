@@ -16,11 +16,12 @@
     width: calc(50vw - 30px);
     height: calc(50vh - 30px);
     background: $blocksBackground;
+    border: 1px solid red;
 
     .hideBlock {
       background: $blocksBackground;
       height: 30%;
-      z-index: 10;
+      z-index: 1;
     }
 
     .mainField {
