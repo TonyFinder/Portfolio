@@ -1,0 +1,25 @@
+@import "src/utils/variables";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  width: calc(50vw - 30px); height: calc(50vh - 30px);
+  color: #fff;
+  font-family: 'Lato', serif, Calibri, Arial;
+  .first {
+    font-size: 24px;
+  }
+  .second {
+    font-size: 44px;
+    font-weight: 800;
+    padding: 20px 0;
+  }
+  .third {
+    font-size: 28px;
+    font-weight: 800;
+    color: $mainAccentColor;
+  }
+}

@@ -5,6 +5,7 @@
 }
 
 .body {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,5 +19,42 @@
     justify-content: space-evenly;
     width: 100vw;
   }
-
+  :before {
+    position: absolute;
+    content: '';
+    height: 100%; width: 50%;
+    top: 0; bottom: 0; left: 0;
+    background: #555;
+    animation-name: shadowLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+  }
+  :after {
+    position: absolute;
+    content: '';
+    height: 100%; width: 50%;
+    top: 0; bottom: 0; right: 0;
+    background: #555;
+    animation-name: shadowRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+  }
+  @keyframes shadowRight {
+    50% {
+      width: 50%;
+    }
+    100% {
+      width: 0;
+    }
+  }
+  @keyframes shadowLeft {
+    50% {
+      width: 50%;
+    }
+    100% {
+      width: 0;
+    }
+  }
 }

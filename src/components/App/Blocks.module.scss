@@ -1,9 +1,0 @@
-@import "src/utils/variables";
-
-.container {
-  width: calc(50vw - 30px); height: calc(50vh - 30px);
-  background: $blocksBackground;
-}
-.mainBlock {
-  width: calc(50vw - 30px); height: calc(50vh - 30px);
-}
