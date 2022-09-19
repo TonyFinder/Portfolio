@@ -62,9 +62,9 @@
     position: absolute;
     content: '';
     background: $blocksBackground;
-    transition: 0.3s ease;
+    transition: 0.4s ease;
     animation-name: portfolioBlock;
-    animation-duration: 0.7s;
+    animation-duration: 1s;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
     z-index: 0;
