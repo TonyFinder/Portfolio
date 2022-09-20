@@ -1,15 +1,15 @@
 import React from 'react';
 import styles from './Portfolio.module.scss'
+import {useAppDispatch} from '../../../../bll/main/store';
+import {changeCurrentPage} from '../../../../bll/main/appReducer';
 
-type PortfolioPropsType = {
-    activator: (active: string) => void
-}
+export const Portfolio = () => {
+    let dispatch = useAppDispatch()
 
-export const Portfolio: React.FC<PortfolioPropsType> = ({activator}) => {
+    const onClickPageActivate = () => dispatch(changeCurrentPage('portfolio'))
 
     return (
-        <div className={styles.container}
-             onClick={()=>activator('portfolio')}>
+        <div className={styles.container} onClick={onClickPageActivate}>
             <div className={styles.hideBlock}></div>
             <div className={styles.mainField}>
                 <div className={styles.textBlockFirst}>My&nbsp;</div>
