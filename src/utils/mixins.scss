@@ -4,6 +4,9 @@
 @mixin transitionBlocks {
   transition: .5s ease;
 }
+@mixin transitionToSmallBlocks {
+  transition: 2s ease;
+}
 
 // Small blocks on main page
 @mixin mainBlocks($first, $second) {
@@ -16,7 +19,7 @@
     width: calc(50vw - 30px);
     height: calc(50vh - 30px);
     background: $blocksBackground;
-    border: 1px solid red;
+    @include transitionToSmallBlocks;
 
     .hideBlock {
       background: $blocksBackground;
@@ -95,5 +98,8 @@
   }
   .container:hover .textBlockSecond:after {
     top: 100%;
+  }
+  .makeSmaller {
+    transform: scale(0.7);
   }
 }

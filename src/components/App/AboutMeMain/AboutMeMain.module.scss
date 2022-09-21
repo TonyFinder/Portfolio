@@ -12,7 +12,7 @@
     right: 50px;
     width: 30px;
     cursor: pointer;
-    animation-name: portfolio;
+    animation-name: aboutMe;
     animation-duration: 1.5s;
     animation-timing-function: ease-in;
     z-index: 10;
@@ -22,7 +22,7 @@
     display: none;
     visibility: hidden;
   }
-  @keyframes portfolio {
+  @keyframes aboutMe {
     0% {
       opacity: 0;
     }

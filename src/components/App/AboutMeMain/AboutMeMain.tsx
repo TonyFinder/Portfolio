@@ -1,10 +1,9 @@
-import styles from './PortfolioMain.module.scss'
-import closeButton from '../../../images/close.png'
+import closeButton from '../../../images/close.png';
+import styles from './AboutMeMain.module.scss'
 import {useAppDispatch, useCustomSelector} from '../../../bll/main/store';
 import {changeCurrentPage, PageType} from '../../../bll/main/appReducer';
 
-
-export const PortfolioMain = () => {
+export const AboutMeMain = () => {
     const dispatch = useAppDispatch()
     const page = useCustomSelector<PageType>(state => state.app.page)
 
@@ -13,7 +12,7 @@ export const PortfolioMain = () => {
     return (
         <div className={styles.container}>
             <img src={closeButton}
-                 className={page === 'portfolio' ? styles.closeButton : styles.closeButtonNone}
+                 className={page === 'aboutMe' ? styles.closeButton : styles.closeButtonNone}
                  onClick={onClickCloseHandler}/>
         </div>
     )
