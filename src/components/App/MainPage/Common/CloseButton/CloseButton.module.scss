@@ -1,0 +1,30 @@
+@import "src/utils/mixins";
+@import "src/utils/variables";
+
+.closeButton {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  width: 30px;
+  cursor: pointer;
+  animation-name: button;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in;
+  z-index: 10;
+}
+.closeButtonNone {
+  position: absolute;
+  display: none;
+  visibility: hidden;
+}
+@keyframes button {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
