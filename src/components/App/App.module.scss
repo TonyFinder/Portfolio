@@ -62,7 +62,7 @@
     position: absolute;
     content: '';
     background: $blocksBackground;
-    transition: 0.4s ease;
+    //transition: 0.4s ease;
     animation-name: portfolioBlock;
     animation-duration: 1s;
     animation-timing-function: ease-in;
@@ -71,12 +71,12 @@
   }
   .portfolioMainNone {
     position: absolute;
+    content: '';
     visibility: hidden;
-    //transition: 0.4s ease;
+    transition: 1.5s ease;
     animation-name: portfolioBackToSmall;
-    animation-duration: 3s;
+    animation-duration: 1s;
     animation-timing-function: ease-in;
-    animation-fill-mode: backwards;
   }
   @keyframes portfolioBlock {
     0% {
@@ -95,11 +95,18 @@
       width: calc(100vw - 40px);
       height: calc(100vh - 40px);
       left: 20px; bottom: 20px;
+      background: $blocksBackground;
+      z-index: 5;
+    }
+    99% {
+      background: $blocksBackground;
     }
     100% {
       width: calc(50vw - 30px);
       height: calc(50vh - 30px);
       left: 20px; bottom: 20px;
+      background: unset;
+      z-index: 5;
     }
   }
 
@@ -107,7 +114,7 @@
     position: absolute;
     content: '';
     background: $blocksBackground;
-    transition: 0.4s ease;
+    //transition: 0.4s ease;
     animation-name: aboutMeBlock;
     animation-duration: 1s;
     animation-timing-function: ease-in;
@@ -116,6 +123,12 @@
   }
   .aboutMeMainNone {
     position: absolute;
+    content: '';
+    visibility: hidden;
+    transition: 1.5s ease;
+    animation-name: aboutMeBlockBackToSmall;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
   }
   @keyframes aboutMeBlock {
     0% {
@@ -129,12 +142,31 @@
       right: 20px; top: 20px;
     }
   }
+  @keyframes aboutMeBlockBackToSmall {
+    0% {
+      width: calc(100vw - 40px);
+      height: calc(100vh - 40px);
+      right: 20px; top: 20px;
+      background: $blocksBackground;
+      z-index: 5;
+    }
+    99% {
+      background: $blocksBackground;
+    }
+    100% {
+      width: calc(50vw - 30px);
+      height: calc(50vh - 30px);
+      right: 20px; top: 20px;
+      background: unset;
+      z-index: 5;
+    }
+  }
 
   .getInTouchMain {
     position: absolute;
     content: '';
     background: $blocksBackground;
-    transition: 0.4s ease;
+    //transition: 0.4s ease;
     animation-name: getInTouchBlock;
     animation-duration: 1s;
     animation-timing-function: ease-in;
@@ -143,6 +175,12 @@
   }
   .getInTouchMainNone {
     position: absolute;
+    content: '';
+    visibility: hidden;
+    transition: 1.5s ease;
+    animation-name: getInTouchBlockBackToSmall;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
   }
   @keyframes getInTouchBlock {
     0% {
@@ -154,6 +192,25 @@
       width: calc(100vw - 40px);
       height: calc(100vh - 40px);
       right: 20px; bottom: 20px;
+    }
+  }
+  @keyframes getInTouchBlockBackToSmall {
+    0% {
+      width: calc(100vw - 40px);
+      height: calc(100vh - 40px);
+      right: 20px; bottom: 20px;
+      background: $blocksBackground;
+      z-index: 5;
+    }
+    99% {
+      background: $blocksBackground;
+    }
+    100% {
+      width: calc(50vw - 30px);
+      height: calc(50vh - 30px);
+      right: 20px; bottom: 20px;
+      background: unset;
+      z-index: 5;
     }
   }
 

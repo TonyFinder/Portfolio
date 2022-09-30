@@ -1,6 +1,6 @@
 import {useAppDispatch, useCustomSelector} from '../../../bll/main/store';
 import {changeCurrentPage, PageType} from '../../../bll/main/appReducer';
-import styles from '../AboutMeMain/AboutMeMain.module.scss';
+import styles from './GetInTouchMain.module.scss';
 import closeButton from '../../../images/close.png';
 
 export const GetInTouchMain = () => {
@@ -12,6 +12,7 @@ export const GetInTouchMain = () => {
     return (
         <div className={styles.container}>
             <img src={closeButton}
+                 alt={''}
                  className={page === 'getInTouch' ? styles.closeButton : styles.closeButtonNone}
                  onClick={onClickCloseHandler}/>
         </div>
