@@ -14,9 +14,9 @@ export const Main = () => {
             <div className={styles.third}>
                 <ReactTypingEffect
                     text={['Frontend Developer', 'React Developer']}
-                    speed={150}
+                    speed={100}
                     eraseSpeed={30}
-                    typingDelay={2000}
+                    typingDelay={1400}
                     cursor={'_'}/>
             </div>
         </div>
