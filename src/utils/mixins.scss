@@ -121,7 +121,7 @@
   visibility: hidden;
   transition: 1.5s ease;
   animation-name: $animationName;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
   animation-timing-function: ease-in;
 }
 @mixin keyframesSmallToBigMainBlocks($animationNameBig, $animationNameSmall, $left, $right, $top, $bottom){
@@ -158,5 +158,16 @@
     100% {
       background: unset;
     }
+  }
+}
+@mixin keyframesDisplayContent {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

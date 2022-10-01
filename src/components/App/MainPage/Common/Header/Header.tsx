@@ -2,6 +2,8 @@ import styles from './Header.module.scss'
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {IconProp} from '@fortawesome/fontawesome-svg-core';
+import {useCustomSelector} from '../../../../../bll/main/store';
+import {PageType} from '../../../../../bll/main/appReducer';
 
 type HeaderPropsType = {
     contentFirst: string
@@ -10,9 +12,10 @@ type HeaderPropsType = {
 }
 
 export const Header: React.FC<HeaderPropsType> = ({contentFirst, contentSecond, icon}) => {
+    const page = useCustomSelector<PageType>(state => state.app.page)
 
     return (
-        <div className={styles.headerBlock}>
+        <div className={page !== 'all' ? styles.headerBlock : styles.headerBlockNone}>
             <div className={styles.header}>
                 <div>{contentFirst}&nbsp;</div>
                 <div>{contentSecond}</div>
