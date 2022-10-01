@@ -1,0 +1,41 @@
+@import "src/utils/mixins";
+@import "src/utils/variables";
+
+.headerBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .header {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+    font-family: 'Lato', serif, Calibri, Arial;
+    font-size: 55px;
+    font-weight: 900;
+    text-transform: uppercase;
+
+    :first-child {
+      color: #fff;
+    }
+    :last-child {
+      color: $mainAccentColor;
+    }
+  }
+  .iconHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 40px;
+    .line {
+      width: 25%;
+      border-bottom: 1px solid #666;
+    }
+    .icon {
+      color: $mainAccentColor;
+      font-size: 20px;
+      margin: 0 20px;
+    }
+  }
+
+}
