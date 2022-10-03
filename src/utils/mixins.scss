@@ -5,7 +5,7 @@
   transition: .5s ease;
 }
 @mixin transitionToSmallBlocks {
-  transition: 2s ease;
+  transition: 1s ease;
 }
 
 // Small blocks on main page
@@ -119,7 +119,7 @@
   position: absolute;
   content: '';
   visibility: hidden;
-  transition: 1.5s ease;
+  transition: 1s ease;
   animation-name: $animationName;
   animation-duration: 1s;
   animation-timing-function: ease-in;

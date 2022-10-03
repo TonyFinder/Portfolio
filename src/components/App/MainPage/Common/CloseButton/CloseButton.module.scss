@@ -2,9 +2,9 @@
 @import "src/utils/variables";
 
 .closeButton {
-  position: absolute;
-  top: 30px;
-  right: 50px;
+  position: fixed;
+  top: 50px;
+  right: 70px;
   width: 30px;
   cursor: pointer;
   animation-name: button;
