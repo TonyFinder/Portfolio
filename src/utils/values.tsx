@@ -29,9 +29,9 @@ export const portfolioData: StoreType = {
         {id: 5, skill: 'Redux', description: 'If you see this portfolio, it means that I already have good knowledge here.'},
     ],
     portfolio: [
-        {id: 3, name: 'Pedicure master', description: 'This app was made for personal use only', link: 'https://pedicure-cabinet.ru/', image: pedicure},
-        {id: 1, name: 'To-Do list', description: 'The main project I have been made using TypeScript and React', link: 'https://TonyFinder.github.io/Todolist/', image: todo1},
-        {id: 4, name: 'Cards study', description: 'A team work project. An application for studying using question cards.', link: 'https://tonyfinder.github.io/Cards-study/#/login', image: question},
-        {id: 2, name: 'Social network', description: 'Introducing of my code using TypeScript and React', link: 'https://tonyfinder.github.io/Social-network/', image: social},
+        {id: 1, name: 'Pedicure master', description: 'This app was made for personal use only', link: 'https://pedicure-cabinet.ru/', image: pedicure},
+        {id: 2, name: 'To-Do list', description: 'The main project I have been made using TypeScript and React', link: 'https://TonyFinder.github.io/Todolist/', image: todo1},
+        {id: 3, name: 'Cards study', description: 'A team work project. An application for studying using question cards.', link: 'https://tonyfinder.github.io/Cards-study/#/login', image: question},
+        {id: 4, name: 'Social network', description: 'Introducing of my code using TypeScript and React', link: 'https://tonyfinder.github.io/Social-network/', image: social},
     ],
 }

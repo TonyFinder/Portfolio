@@ -1,11 +1,15 @@
 import closeButton from '../../../../../images/close.png';
 import styles from './CloseButton.module.scss';
-import {useAppDispatch, useCustomSelector} from '../../../../../bll/main/store';
-import {changeCurrentPage, PageType} from '../../../../../bll/main/appReducer';
+import {useAppDispatch} from '../../../../../bll/main/store';
+import {changeCurrentPage} from '../../../../../bll/main/appReducer';
+import React from 'react';
 
-export const CloseButton = () => {
+type CloseButtonPropsType = {
+    show: boolean
+}
+
+export const CloseButton: React.FC<CloseButtonPropsType> = ({show}) => {
     const dispatch = useAppDispatch()
-    const page = useCustomSelector<PageType>(state => state.app.page)
 
     const onClickCloseHandler = () => dispatch(changeCurrentPage('all'))
 
@@ -13,7 +17,7 @@ export const CloseButton = () => {
         <>
             <img src={closeButton}
                  alt={'closeButtonImage'}
-                 className={page !== 'all' ? styles.closeButton : styles.closeButtonNone}
+                 className={show ? styles.closeButton : styles.closeButtonNone}
                  onClick={onClickCloseHandler}/>
         </>
     )

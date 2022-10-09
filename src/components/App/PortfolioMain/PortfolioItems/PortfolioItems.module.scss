@@ -1,0 +1,27 @@
+@import "src/utils/mixins";
+@import "src/utils/variables";
+
+.container {
+  position: absolute;
+  display: flex;
+  top: 0; bottom: 0; left: 0; right: 0;
+  background: #222;
+  z-index: 11;
+  border: 1px solid white;
+  //transition: bottom 1s ease 0s;
+  .innerBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    .picture {
+      width: 45%;
+    }
+    .description {
+      width: 45%;
+    }
+  }
+}
+.containerNone {
+  display: none;
+}
