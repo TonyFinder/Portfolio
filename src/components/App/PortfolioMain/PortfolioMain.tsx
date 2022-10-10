@@ -11,21 +11,25 @@ export const PortfolioMain = () => {
     let dispatch = useAppDispatch()
     const {page, showProfileItem} = useCustomSelector<AppInitialStateType>(state => state.app)
 
-    const onClickPortfolioChanger = (id: number) => {
-        dispatch(changePortfolioNumber(id))
+    const styleContainer = (page !== 'all') && !showProfileItem
+        ? styles.container
+        : `${styles.container} ${styles.makeSmaller}`
+
+    const onClickPortfolioChanger = (index: number) => {
+        dispatch(changePortfolioNumber(index))
         dispatch(setShowProfileItem(true))
     }
 
     return (
         <>
-            <div className={(page !== 'all') && !showProfileItem ? styles.container : `${styles.container} ${styles.makeSmaller}`}>
+            <div className={styleContainer}>
                 <CloseButton show={page !== 'all'}/>
                 <Header contentFirst="My" contentSecond="Portfolio" icon={faSuitcase}/>
                 <div className={page === 'portfolio' ? styles.content : styles.contentNone}>
-                    {portfolioData.portfolio.map(project => <div key={project.id}
+                    {portfolioData.portfolio.map((project, i) => <div key={project.id}
                                                                  className={page === 'portfolio' ? styles.big : styles.bigNone}>
                         <img src={page === 'portfolio' ? project.image : ''} alt={'preview'}/>
-                        <div className={styles.textBlock} onClick={() => onClickPortfolioChanger(project.id)}>
+                        <div className={styles.textBlock} onClick={() => onClickPortfolioChanger(i)}>
                             <div className={styles.text}>
                                 {project.name}
                             </div>

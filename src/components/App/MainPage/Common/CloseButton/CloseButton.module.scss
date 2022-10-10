@@ -5,12 +5,18 @@
   position: fixed;
   top: 50px;
   right: 70px;
-  width: 30px;
   cursor: pointer;
+  color: #ababab;
+  font-size: 47px;
+  font-weight: 300;
+  margin: 0 40px;
   animation-name: button;
   animation-duration: 1.2s;
   animation-timing-function: ease-in;
   z-index: 1;
+}
+.closeButton:hover {
+  color: #c2c2c2;
 }
 .closeButtonNone {
   display: none;

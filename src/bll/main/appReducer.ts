@@ -1,7 +1,7 @@
 let initialState: AppInitialStateType = {
     page: 'all',
     showProfileItem: false,
-    portfolioNumber: 1
+    portfolioNumber: 0
 }
 
 export const appReducer = (state: AppInitialStateType = initialState, action: AppActionTypes): AppInitialStateType => {

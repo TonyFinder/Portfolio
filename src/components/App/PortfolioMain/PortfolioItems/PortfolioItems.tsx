@@ -3,10 +3,11 @@ import styles from './PortfolioItems.module.scss'
 import {portfolioData} from '../../../../utils/values';
 import {AppInitialStateType} from '../../../../bll/main/appReducer';
 import {CloseButton} from '../../MainPage/Common/CloseButton/CloseButton';
+import {Pagination} from '../../MainPage/Common/Pagination/Pagination';
 
 export const PortfolioItems = () => {
     const {showProfileItem, portfolioNumber} = useCustomSelector<AppInitialStateType>(state => state.app)
-    const {name, description, link, image} = portfolioData.portfolio.filter(item => item.id === portfolioNumber)[0]
+    const {name, description, link, image} = portfolioData.portfolio[portfolioNumber]
 
     return (
         <div className={showProfileItem ? styles.container : styles.containerNone}>
@@ -26,6 +27,8 @@ export const PortfolioItems = () => {
                     </div>
                 </div>
             </div>
+
+            <Pagination/>
         </div>
     )
 }

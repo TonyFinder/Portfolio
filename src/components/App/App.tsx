@@ -16,41 +16,42 @@ export const App = () => {
 
     // Logic for leaving modal window in case ESC button is pressed
     const escFunction = (event: KeyboardEvent) => {
-        event.code === 'Escape' &&
-            showProfileItem
-                ? dispatch(setShowProfileItem(false))
-                : dispatch(changeCurrentPage('all'))
+        if (event.code === 'Escape') {
+         showProfileItem
+                    ? dispatch(setShowProfileItem(false))
+                    : dispatch(changeCurrentPage('all'))
+        }
     }
 
-useEffect(() => {
-    // @ts-ignore
-    document.addEventListener('keydown', escFunction)
-
-    return () => {
+    useEffect(() => {
         // @ts-ignore
-        document.removeEventListener('keydown', escFunction)
-    }
-}, [escFunction])
+        document.addEventListener('keydown', escFunction)
 
-return (
-    <div className={styles.body}>
-        <div className={styles.up}>
-            <Main/>
-            <AboutMe/>
+        return () => {
+            // @ts-ignore
+            document.removeEventListener('keydown', escFunction)
+        }
+    }, [escFunction])
+
+    return (
+        <div className={styles.body}>
+            <div className={styles.up}>
+                <Main/>
+                <AboutMe/>
+            </div>
+            <div className={styles.down}>
+                <Portfolio/>
+                <Contact/>
+            </div>
+            <div className={`${page === 'portfolio' ? styles.portfolioMain : styles.portfolioMainNone}`}>
+                <PortfolioMain/>
+            </div>
+            <div className={`${page === 'aboutMe' ? styles.aboutMeMain : styles.aboutMeMainNone}`}>
+                <AboutMeMain/>
+            </div>
+            <div className={`${page === 'getInTouch' ? styles.getInTouchMain : styles.getInTouchMainNone}`}>
+                <GetInTouchMain/>
+            </div>
         </div>
-        <div className={styles.down}>
-            <Portfolio/>
-            <Contact/>
-        </div>
-        <div className={`${page === 'portfolio' ? styles.portfolioMain : styles.portfolioMainNone}`}>
-            <PortfolioMain/>
-        </div>
-        <div className={`${page === 'aboutMe' ? styles.aboutMeMain : styles.aboutMeMainNone}`}>
-            <AboutMeMain/>
-        </div>
-        <div className={`${page === 'getInTouch' ? styles.getInTouchMain : styles.getInTouchMainNone}`}>
-            <GetInTouchMain/>
-        </div>
-    </div>
-)
+    )
 }
