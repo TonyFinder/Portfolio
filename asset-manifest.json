@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.a7f3e7a1.css",
-    "main.js": "/Portfolio/static/js/main.62186f2e.js",
+    "main.css": "/Portfolio/static/css/main.043975e0.css",
+    "main.js": "/Portfolio/static/js/main.b6409bff.js",
     "static/js/787.cfd8f164.chunk.js": "/Portfolio/static/js/787.cfd8f164.chunk.js",
-    "static/media/social.jpg": "/Portfolio/static/media/social.5ab7d2e342fabd0a3088.jpg",
-    "static/media/todoFinal1.jpg": "/Portfolio/static/media/todoFinal1.8ed227d63d0be5d1c7bc.jpg",
-    "static/media/pedicure3.jpg": "/Portfolio/static/media/pedicure3.155ddc7cda4e25775f7f.jpg",
-    "static/media/cards.jpg": "/Portfolio/static/media/cards.bd68b0dd521886f03aa3.jpg",
+    "static/media/social.jpg": "/Portfolio/static/media/social.be0944987badabf79514.jpg",
+    "static/media/todoFinal1.jpg": "/Portfolio/static/media/todoFinal1.1a631d6eb1d7feb48653.jpg",
+    "static/media/pedicure3.jpg": "/Portfolio/static/media/pedicure3.bfa1bac8836e89f32f6b.jpg",
+    "static/media/cards.jpg": "/Portfolio/static/media/cards.6e798eb69a463128cc8b.jpg",
     "index.html": "/Portfolio/index.html",
-    "main.a7f3e7a1.css.map": "/Portfolio/static/css/main.a7f3e7a1.css.map",
-    "main.62186f2e.js.map": "/Portfolio/static/js/main.62186f2e.js.map",
+    "main.043975e0.css.map": "/Portfolio/static/css/main.043975e0.css.map",
+    "main.b6409bff.js.map": "/Portfolio/static/js/main.b6409bff.js.map",
     "787.cfd8f164.chunk.js.map": "/Portfolio/static/js/787.cfd8f164.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a7f3e7a1.css",
-    "static/js/main.62186f2e.js"
+    "static/css/main.043975e0.css",
+    "static/js/main.b6409bff.js"
   ]
 }
