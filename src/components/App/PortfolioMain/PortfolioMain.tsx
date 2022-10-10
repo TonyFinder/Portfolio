@@ -10,7 +10,6 @@ import {PortfolioItems} from './PortfolioItems/PortfolioItems';
 export const PortfolioMain = () => {
     let dispatch = useAppDispatch()
     const {page, showProfileItem} = useCustomSelector<AppInitialStateType>(state => state.app)
-    const showButton = (page !== 'all')&&!showProfileItem
 
     const onClickPortfolioChanger = (id: number) => {
         dispatch(changePortfolioNumber(id))
@@ -20,7 +19,7 @@ export const PortfolioMain = () => {
     return (
         <>
             <div className={(page !== 'all') && !showProfileItem ? styles.container : `${styles.container} ${styles.makeSmaller}`}>
-                <CloseButton show={showButton}/>
+                <CloseButton show={page !== 'all'}/>
                 <Header contentFirst="My" contentSecond="Portfolio" icon={faSuitcase}/>
                 <div className={page === 'portfolio' ? styles.content : styles.contentNone}>
                     {portfolioData.portfolio.map(project => <div key={project.id}

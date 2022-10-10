@@ -7,18 +7,48 @@
   top: 0; bottom: 0; left: 0; right: 0;
   background: #222;
   z-index: 11;
-  border: 1px solid white;
+  //border: 1px solid white;
   //transition: bottom 1s ease 0s;
   .innerBlock {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid white;
+    width: 100%;
+    //border: 1px solid yellow;
     .picture {
-      width: 45%;
+      width: 30%;
+      height: auto;
+      min-width: 250px;
+      min-height: 250px * 0.6;
+      margin: 20px;
+      //border: 1px solid white;
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
     .description {
-      width: 45%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 30%;
+      height: 100%;
+      padding: 20px;
+      color: white;
+      //border: 1px solid #61d9fa;
+      h3 {
+        font-size: 30px;
+        margin: 0 0 30px 0;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 110%;
+        font-family: 'Lato', serif, Calibri, Arial;
+      }
+      .line {
+        width: 100%;
+        border: 0.1px solid #333;
+        margin: 30px 0;
+      }
     }
   }
 }

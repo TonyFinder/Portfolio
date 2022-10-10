@@ -6,7 +6,7 @@ import {CloseButton} from '../../MainPage/Common/CloseButton/CloseButton';
 
 export const PortfolioItems = () => {
     const {showProfileItem, portfolioNumber} = useCustomSelector<AppInitialStateType>(state => state.app)
-    const {name, id, description, link, image} = portfolioData.portfolio.filter(item => item.id === portfolioNumber)[0]
+    const {name, description, link, image} = portfolioData.portfolio.filter(item => item.id === portfolioNumber)[0]
 
     return (
         <div className={showProfileItem ? styles.container : styles.containerNone}>
@@ -16,7 +16,14 @@ export const PortfolioItems = () => {
                     <img src={image} alt={'project image'}/>
                 </div>
                 <div className={styles.description}>
-
+                    <h3>{name}</h3>
+                    <p>{description}</p>
+                    <p>{link}</p>
+                    <div className={styles.line}></div>
+                    <div className={styles.buttons}>
+                        <div>Code</div>
+                        <div>Demo</div>
+                    </div>
                 </div>
             </div>
         </div>

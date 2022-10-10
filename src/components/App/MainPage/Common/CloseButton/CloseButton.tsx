@@ -1,7 +1,7 @@
 import closeButton from '../../../../../images/close.png';
 import styles from './CloseButton.module.scss';
-import {useAppDispatch} from '../../../../../bll/main/store';
-import {changeCurrentPage} from '../../../../../bll/main/appReducer';
+import {useAppDispatch, useCustomSelector} from '../../../../../bll/main/store';
+import {AppInitialStateType, changeCurrentPage, setShowProfileItem} from '../../../../../bll/main/appReducer';
 import React from 'react';
 
 type CloseButtonPropsType = {
@@ -10,8 +10,13 @@ type CloseButtonPropsType = {
 
 export const CloseButton: React.FC<CloseButtonPropsType> = ({show}) => {
     const dispatch = useAppDispatch()
+    const {showProfileItem} = useCustomSelector<AppInitialStateType>(state => state.app)
 
-    const onClickCloseHandler = () => dispatch(changeCurrentPage('all'))
+    const onClickCloseHandler = () => {
+        showProfileItem
+            ? dispatch(setShowProfileItem(false))
+            : dispatch(changeCurrentPage('all'))
+    }
 
     return (
         <>
