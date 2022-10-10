@@ -20,7 +20,8 @@
     justify-content: space-evenly;
     width: 100vw;
   }
-  :before {
+
+  .shadowLeft {
     position: absolute;
     content: '';
     height: 100%; width: 50%;
@@ -30,8 +31,9 @@
     animation-duration: 1s;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
+    z-index: 100;
   }
-  :after {
+  .shadowRight {
     position: absolute;
     content: '';
     height: 100%; width: 50%;
@@ -41,6 +43,7 @@
     animation-duration: 1s;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
+    z-index: 100;
   }
   @keyframes shadowRight {
     50% {

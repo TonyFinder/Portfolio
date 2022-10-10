@@ -35,6 +35,9 @@ export const App = () => {
 
     return (
         <div className={styles.body}>
+            <div className={styles.shadowLeft}></div>
+            <div className={styles.shadowRight}></div>
+
             <div className={styles.up}>
                 <Main/>
                 <AboutMe/>

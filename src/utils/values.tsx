@@ -16,7 +16,10 @@ export type PortfolioType = {
     id: number
     name: string
     description: string
-    link: string
+    technologies: string
+    highlights: string
+    demo: string
+    code: string
     image: string
 }
 
@@ -29,9 +32,45 @@ export const portfolioData: StoreType = {
         {id: 5, skill: 'Redux', description: 'If you see this portfolio, it means that I already have good knowledge here.'},
     ],
     portfolio: [
-        {id: 1, name: 'Pedicure master', description: 'This app was made for personal use only', link: 'https://pedicure-cabinet.ru/', image: pedicure},
-        {id: 2, name: 'To-Do list', description: 'The main project I have been made using TypeScript and React', link: 'https://TonyFinder.github.io/Todolist/', image: todo1},
-        {id: 3, name: 'Cards study', description: 'A team work project. An application for studying using question cards.', link: 'https://tonyfinder.github.io/Cards-study/#/login', image: question},
-        {id: 4, name: 'Social network', description: 'Introducing of my code using TypeScript and React', link: 'https://tonyfinder.github.io/Social-network/', image: social},
+        {
+            id: 1,
+            name: 'Pedicure master',
+            description: 'Commercial project which has been made for the pedicure master',
+            technologies: 'React, Redux, TypeScript, ReactRouter, Jest, SCSS, MUI, Git, GitHub',
+            highlights: 'Based on the Material UI component library. Adapted for all popular screens.',
+            demo: 'https://pedicure-cabinet.ru/',
+            code: 'https://github.com/TonyFinder/Pedicure-master',
+            image: pedicure
+        },
+        {
+            id: 2,
+            name: 'To-Do list',
+            description: 'Educational project. Developing a To-Do list',
+            technologies: 'React, Redux, TypeScript, React Router, Jest, SCSS, MUI, Storybook, Axios, Postman, Formik, Redux Thunk, Git, GitHub',
+            highlights: 'Good to check all the CRUD operations',
+            demo: 'https://TonyFinder.github.io/Todolist/',
+            code: 'https://github.com/TonyFinder/Todolist',
+            image: todo1
+        },
+        {
+            id: 3,
+            name: 'Cards study',
+            description: 'A team work project. An application for studying using question cards',
+            technologies: 'React, Redux, TypeScript, React Router, Styled Components, Jest, SCSS, Axios, Postman, ReduxThunk, Git, GitHub',
+            highlights: 'Priority of custom components. Custom form validation. Adapted for all popular screens.',
+            demo: 'https://tonyfinder.github.io/Cards-study/',
+            code: 'https://github.com/TonyFinder/Cards-study',
+            image: question
+        },
+        {
+            id: 4,
+            name: 'Social network',
+            description: 'Educational project. A plain social network.',
+            technologies: 'React, Redux, TypeScript, React Router, Jest, CSS3, Storybook, Axios, Postman, Redux Form, Redux Thunk, Git, GitHub',
+            highlights: 'The only project that is made using class components to understand working with classes',
+            demo: 'https://tonyfinder.github.io/Social-network/',
+            code: 'https://github.com/TonyFinder/Social-network',
+            image: social
+        },
     ],
 }
