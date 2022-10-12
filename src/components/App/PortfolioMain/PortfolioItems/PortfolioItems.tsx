@@ -19,9 +19,22 @@ export const PortfolioItems = () => {
                 </div>
                 <div className={styles.description}>
                     <h3>{name}</h3>
-                    <p>Project Description:&nbsp;</p><span>{description}</span>
-                    <p>Project Highlights:&nbsp;</p><span>{highlights}</span>
-                    <p>Used Technologies:&nbsp;</p><span>{technologies}</span>
+
+                    <div className={styles.list}>
+                        <i className="fa-solid fa-circle-info"></i>
+                        <span className={styles.main}>Project Description:&nbsp;</span><span className={styles.secondText}>{description}</span>
+                    </div>
+
+                    <div className={styles.list}>
+                        <i className="fa-solid fa-highlighter"></i>
+                        <span className={styles.main}>Project Highlights:&nbsp;</span><span className={styles.secondText}>{highlights}</span>
+                    </div>
+
+                    <div className={styles.list}>
+                        <i className="fa-solid fa-gears"></i>
+                        <span className={styles.main}>Used Technologies:&nbsp;</span><span className={styles.secondText}>{technologies}</span>
+                    </div>
+
                     <div className={styles.line}></div>
                     <div className={styles.buttons}>
                         <a className={styles.button} href={demo} target={'_blank'}>
