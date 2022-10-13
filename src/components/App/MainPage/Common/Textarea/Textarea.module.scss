@@ -1,0 +1,48 @@
+.textarea {
+  display: flex;
+  margin: 34px 0;
+  font-family: "Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+
+  i {
+    font-size: 22px;
+    padding-top: 1rem;
+    color: #ccc;
+    width: 1em;
+  }
+
+  .textField {
+    position: relative;
+    width: 100%;
+    margin-left: 24px;
+    textarea {
+      width: 100%;
+      min-height: 3rem;
+      padding: 1rem 0 1rem 0;
+      overflow: hidden;
+      background: none;
+      font-size: 1rem;
+      font-family: "Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+      border: none;
+      color: #fff;
+      border-bottom: 1px solid #666;
+    }
+
+    textarea:focus {
+      outline: none;
+    }
+
+
+    label {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      font-size: 15px;
+      cursor: text;
+      font-weight: 400;
+      z-index: -1;
+    }
+  }
+
+}
+

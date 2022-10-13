@@ -6,6 +6,7 @@ import question from '../images/portfolio/cards.jpg'
 export type StoreType = {
     skills: SkillType[]
     portfolio: PortfolioType[]
+    contacts: ContactType[]
 }
 export type SkillType = {
     id: number
@@ -21,6 +22,18 @@ export type PortfolioType = {
     demo: string
     code: string
     image: string
+}
+export type ContactType = {
+    id: number
+    title: string
+    icon?: string
+    info?: string
+    icons?: IconsType[]
+}
+export type IconsType = {
+    id: number
+    link: string
+    contactLink: string
 }
 
 export const portfolioData: StoreType = {
@@ -73,4 +86,15 @@ export const portfolioData: StoreType = {
             image: social
         },
     ],
+    contacts: [
+        {id: 1, title: "PHONE", icon: "fa-solid fa-phone", info: "+7 902 077 2627"},
+        {id: 2, title: "EMAIL", icon: "fa-solid fa-envelope", info: "antonrozdobudko@gmail.com"},
+        {id: 3, title: "TELEGRAM", icon: "fa-brands fa-skype", info: "@Anton_Rozdobudko"},
+        {id: 4, title: "ADDRESS", icon: "fa-solid fa-house-chimney", info: "Vladivostok, Russia"},
+        {id: 5, title: "SOCIAL PROFILES", icons: [
+                {id: 1, contactLink: "https://www.linkedin.com/in/anton-rozdobudko-a2622a234/", link: "https://img.icons8.com/doodle/100/000000/linkedin-circled.png"},
+                {id: 2, contactLink: "https://www.instagram.com/tonyfinder", link: "https://img.icons8.com/doodle/100/000000/instagram--v1.png"},
+                {id: 3, contactLink: "https://www.facebook.com/anton.rozdobudko", link: "https://img.icons8.com/doodle/100/000000/facebook-new.png"},
+            ]},
+    ]
 }
