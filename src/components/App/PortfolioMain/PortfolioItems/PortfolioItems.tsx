@@ -5,6 +5,7 @@ import {AppInitialStateType} from '../../../../bll/main/appReducer';
 import {CloseButton} from '../../MainPage/Common/CloseButton/CloseButton';
 import {Pagination} from '../../MainPage/Common/Pagination/Pagination';
 import React from 'react';
+import {Button} from '../../MainPage/Common/Button/Button';
 
 export const PortfolioItems = () => {
     const {showProfileItem, portfolioNumber} = useCustomSelector<AppInitialStateType>(state => state.app)
@@ -37,14 +38,8 @@ export const PortfolioItems = () => {
 
                     <div className={styles.line}></div>
                     <div className={styles.buttons}>
-                        <a className={styles.button} href={demo} target={'_blank'}>
-                            <div className={styles.text}>Demo</div>
-                            <i className={`${styles.icon} fa-solid fa-arrow-up-right-from-square`}></i>
-                        </a>
-                        <a className={styles.button} href={code} target={'_blank'}>
-                            <div className={styles.text}>Code</div>
-                            <i className={`${styles.icon} fa-solid fa-code`}></i>
-                        </a>
+                        <Button link={demo} text='demo' icon='fa-solid fa-arrow-up-right-from-square'/>
+                        <Button link={code} text='code' icon='fa-solid fa-code'/>
                     </div>
                 </div>
             </div>
