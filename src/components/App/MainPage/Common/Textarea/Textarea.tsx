@@ -8,36 +8,45 @@ export const Textarea: React.FC<TextareaPropsType> = (
 ) => {
 
     const textAreaRef = useRef<HTMLTextAreaElement>(null)
-    const [text, setText] = useState('')
+    const [textExpand, setTextExpand] = useState('')
     const [textAreaHeight, setTextAreaHeight] = useState('auto')
     const [parentHeight, setParentHeight] = useState('auto')
+
+    const [onFocus, setOnFocus] = useState<boolean>(false)
+    const [text, setText] = useState<string>('')
 
     useEffect(() => {
         setParentHeight(`${textAreaRef.current!.scrollHeight}px`)
         setTextAreaHeight(`${textAreaRef.current!.scrollHeight}px`)
-    }, [text])
+    }, [textExpand])
 
     const onChangeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
         setTextAreaHeight('auto')
         setParentHeight(`${textAreaRef.current!.scrollHeight}px`)
-        setText(event.target.value)
+        setTextExpand(event.target.value)
+        setText(event.currentTarget.value)
         onChange && onChange(event)
     }
 
     return (
         <div className={styles.textarea}>
-            <i className={icon}></i>
-            <div className={styles.textField}>
-                <div style={{minHeight: parentHeight}}>
+            <i className={onFocus ? `${styles.icon} ${icon} ${styles.iconActive}` : `${styles.icon} ${icon}`}></i>
+            <div style={{minHeight: parentHeight}} className={styles.wrapper}>
                     <textarea
                         {...restProps}
                         ref={textAreaRef}
+                        value={text}
+                        onFocus={() => setOnFocus(true)}
+                        onBlur={() => setOnFocus(false)}
                         rows={1}
                         style={{height: textAreaHeight}}
                         onChange={onChangeHandler}/>
-                </div>
-                <label>{placeholder}</label>
             </div>
+            <label
+                className={onFocus || text ? `${styles.labelCenter} ${styles.labelUp}` : styles.labelCenter}
+            >
+                {placeholder}
+            </label>
         </div>
     )
 }

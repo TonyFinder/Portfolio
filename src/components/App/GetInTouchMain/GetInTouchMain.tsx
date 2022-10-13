@@ -8,6 +8,7 @@ import {portfolioData} from '../../../utils/values';
 import React from 'react';
 import {Input} from '../MainPage/Common/Input/Input';
 import {Textarea} from '../MainPage/Common/Textarea/Textarea';
+import {Button} from '../MainPage/Common/Button/Button';
 
 export const GetInTouchMain = () => {
     const page = useCustomSelector<PageType>(state => state.app.page)
@@ -37,7 +38,7 @@ export const GetInTouchMain = () => {
                         <Input placeholder={'Your Name'} icon={"fa-solid fa-user"}/>
                         <Input placeholder={'Your Email'} icon={"fa-solid fa-envelope"}/>
                         <Textarea placeholder={'Your Message'} icon={"fa-solid fa-comments"}/>
-
+                        <Button link='#' text='Send message' icon='fa-solid fa-paper-plane'/>
                     </form>
                 </div>
             </div>

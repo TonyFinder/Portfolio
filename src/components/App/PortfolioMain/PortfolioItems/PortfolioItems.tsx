@@ -38,8 +38,8 @@ export const PortfolioItems = () => {
 
                     <div className={styles.line}></div>
                     <div className={styles.buttons}>
-                        <Button link={demo} text='demo' icon='fa-solid fa-arrow-up-right-from-square'/>
-                        <Button link={code} text='code' icon='fa-solid fa-code'/>
+                        <Button link={demo} text='demo' icon='fa-solid fa-arrow-up-right-from-square' targetBlank/>
+                        <Button link={code} text='code' icon='fa-solid fa-code' targetBlank/>
                     </div>
                 </div>
             </div>

@@ -1,44 +1,57 @@
+@import "src/utils/variables";
+@import "src/utils/mixins";
+
 .input {
+  position: relative;
   display: flex;
   margin: 34px 0;
-  font-family: "Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-family: "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  width: 100%;
 
-  i {
+  .icon {
     font-size: 22px;
     padding-top: 1rem;
     color: #ccc;
     width: 1em;
   }
+  .iconActive {
+    color: $mainAccentColor;
+  }
 
-  .textField {
-    position: relative;
+
+  input {
+    height: 3rem;
     width: 100%;
-    margin-left: 24px;
+    margin-left: 1rem;
+    background: none;
+    font-size: 1rem;
+    font-family: "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    border: none;
+    color: #fff;
+    border-bottom: 1px solid #666;
 
-    input {
-      height: 3rem;
-      width: 100%;
-      background: none;
-      font-size: 1rem;
-      font-family: "Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-      border: none;
-      color: #fff;
-      border-bottom: 1px solid #666;
-    }
+  }
 
-    input:focus {
-      outline: none;
-    }
+  input:focus {
+    outline: none;
+  }
 
-    label {
-      position: absolute;
-      top: 50%; left: 0;
-      transform: translateY(-50%);
-      font-size: 15px;
-      cursor: text;
-      font-weight: 400;
-      z-index: -1;
-    }
+  .labelCenter {
+    position: absolute;
+    top: 50%;
+    left: 44px;
+    transform: translateY(-50%);
+    font-size: 15px;
+    cursor: text;
+    font-weight: 400;
+    transition: 0.5s ease-out;
+    z-index: -1;
+  }
+
+  .labelUp {
+    top: 0;
+    font-size: 12px;
+    transition: 0.3s ease-out;
   }
 
 }
