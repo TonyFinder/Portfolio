@@ -1,0 +1,30 @@
+@import "src/utils/mixins";
+@import "src/utils/variables";
+
+.rightBlock {
+  width: 66.6666666667%;
+  max-width: 700px;
+  padding: 0 24px;
+
+  h6 {
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Lato', serif, Calibri, Arial;
+    margin: 0;
+    font-size: 20px;
+    line-height: 110%;
+  }
+
+  p {
+    font-size: 14px;
+    margin-top: 14px;
+    margin-bottom: 20px;
+  }
+
+  .button {
+    width: 66.6666666667%;
+    height: 42px;
+  }
+
+}

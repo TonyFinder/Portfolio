@@ -1,30 +1,31 @@
 @import "src/utils/mixins";
 @import "src/utils/variables";
 
-.button {
+.wrapper {
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 45%; height: 42px;
-  text-transform: uppercase;
   text-decoration: none;
-  font-family: 'Lato', sans-serif, Calibri, Arial;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 700;
-  background: $mainAccentColor;
-  .text {
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; height: 100%;
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif, Calibri, Arial;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    background: $mainAccentColor;
+    .icon {
+      margin: 5px 0 5px 15px;
+    }
 
   }
-  .icon {
-    margin: 5px 0 5px 15px;
+  button:active {
+    color: #fff;
+    transform: translateY(1px);
   }
-}
-.button:visited {
-  color: #fff;
-  transform: translateY(1px);
-}
-.button:hover {
-  color: #f1f1f1;
+  button:hover {
+    color: #f1f1f1;
+  }
 }

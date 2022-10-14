@@ -54,5 +54,11 @@
     transition: 0.3s ease-out;
   }
 
+  .error {
+    position: absolute;
+    color: red;
+    font-size: 14px;
+    bottom: -20px; left: 44px;
+  }
 }
 

@@ -1,0 +1,42 @@
+@import "src/utils/mixins";
+@import "src/utils/variables";
+
+.leftBlock {
+  color: #eee;
+  background: #111;
+  border: 1px solid #333;
+  padding: 24px;
+  font-size: 16px;
+  width: 33.3333333333%;
+  max-width: 350px;
+
+  h6 {
+    color: $mainAccentColor;
+    margin: 18px 0;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 110%;
+    font-family: 'Lato', serif, Calibri, Arial;
+  }
+
+  h6:nth-child(1) {
+    margin-top: 0;
+  }
+
+  i {
+    color: rgba(255, 255, 255, .3);
+    padding-right: 10px;
+  }
+
+  span {
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+    margin-right: 14px;
+  }
+}

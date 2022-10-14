@@ -14,61 +14,17 @@
     justify-content: center;
     align-items: flex-start;
     width: 100%;
+    animation-name: content;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+  }
 
-    .leftBlock{
-      color: #eee;
-      background: #111;
-      border: 1px solid #333;
-      padding: 24px;
-      font-size: 16px;
-      width: 33.3333333333%;
-      max-width: 350px;
-      h6 {
-        color: $mainAccentColor;
-        margin: 18px 0;
-        font-size: 20px;
-        font-weight: 700;
-        text-transform: uppercase;
-        line-height: 110%;
-        font-family: 'Lato', serif, Calibri, Arial;
-      }
-      h6:nth-child(1) {
-        margin-top: 0;
-      }
-      i {
-        color: rgba(255, 255, 255, .3);
-        padding-right: 10px;
-      }
-      span {
-        font-weight: 400;
-        font-family: 'Lato', sans-serif;
-      }
-      img {
-        width: 40px; height: 40px;
-        margin-right: 14px;
-      }
-    }
-    .rightBlock{
-      width: 66.6666666667%;
-      max-width: 700px;
-      padding: 0 24px;
-      h6 {
-        font-weight: 700;
-        color: white;
-        text-transform: uppercase;
-        font-family: 'Lato', serif, Calibri, Arial;
-        margin: 0;
-        font-size: 20px;
-        line-height: 110%;
-      }
-      p {
-        font-size: 14px;
-        margin-top: 14px;
-        margin-bottom: 20px;
-      }
-      a {
-        width: 66.6666666667%;
-      }
-    }
+  .contentNone {
+    display: none;
+  }
+
+  @keyframes content {
+    @include keyframesDisplayContent;
   }
 }
