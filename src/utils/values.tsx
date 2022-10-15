@@ -89,7 +89,7 @@ export const portfolioData: StoreType = {
     contacts: [
         {id: 1, title: "PHONE", icon: "fa-solid fa-phone", info: "+7 902 077 2627"},
         {id: 2, title: "EMAIL", icon: "fa-solid fa-envelope", info: "antonrozdobudko@gmail.com"},
-        {id: 3, title: "TELEGRAM", icon: "fa-brands fa-skype", info: "@Anton_Rozdobudko"},
+        {id: 3, title: "TELEGRAM", icon: "fa-solid fa-paper-plane", info: "@Anton_Rozdobudko"},
         {id: 4, title: "ADDRESS", icon: "fa-solid fa-house-chimney", info: "Vladivostok, Russia"},
         {id: 5, title: "SOCIAL PROFILES", icons: [
                 {id: 1, contactLink: "https://www.linkedin.com/in/anton-rozdobudko-a2622a234/", link: "https://img.icons8.com/doodle/100/000000/linkedin-circled.png"},

@@ -3,11 +3,16 @@ import styles from './SendEmail.module.scss';
 import {Input} from '../../MainPage/Common/Input/Input';
 import {Textarea} from '../../MainPage/Common/Textarea/Textarea';
 import {Button} from '../../MainPage/Common/Button/Button';
+import {useAppDispatch, useCustomSelector} from '../../../../bll/main/store';
+import {
+    changeGetInTouchData,
+    GetInTouchStateType,
+    sendMessageTC
+} from '../../../../bll/features/sendMessage/getInTouchReducer';
 
 export const SendEmail = () => {
-    const [name, setName] = useState<string>('')
-    const [email, setEmail] = useState<string>('')
-    const [message, setMessage] = useState<string>('')
+    const dispatch = useAppDispatch()
+    const {name, email, message} = useCustomSelector<GetInTouchStateType>(state => state.getInTouch)
 
     const [nameError, setNameError] = useState<string>('')
     const [emailError, setEmailError] = useState<string>('')
@@ -17,9 +22,9 @@ export const SendEmail = () => {
         'borderBottomColor': 'red',
     }
 
-    const onBlurSetName = (value: string) => setName(value)
-    const onBlurSetEmail = (value: string) => setEmail(value)
-    const onBlurSetMessage = (value: string) => setMessage(value)
+    const onBlurSetName = (name: string) => dispatch(changeGetInTouchData({name, email, message}))
+    const onBlurSetEmail = (email: string) => dispatch(changeGetInTouchData({name, email, message}))
+    const onBlurSetMessage = (message: string) => dispatch(changeGetInTouchData({name, email, message}))
     const onClickHandler = () => {
         name === "" ? setNameError('This field have to be filled') : setNameError('')
         email === ""
@@ -28,6 +33,9 @@ export const SendEmail = () => {
                 ? setEmailError('')
                 : setEmailError('Email is not correct')
         message === "" ? setMessageError('This field have to be filled') : setMessageError('')
+
+        name !== "" && email !== "" && /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)
+        && message !== "" && dispatch(sendMessageTC({name, email, message}))
     }
 
     return (
