@@ -1,11 +1,10 @@
 import styles from './Input.module.scss'
-import React, {ChangeEvent, InputHTMLAttributes, useState} from 'react';
+import React, {InputHTMLAttributes, useState} from 'react';
 
 type InputPropsType = {
     placeholder: string
     icon: string
-    onBlurSetValue: (value: string) => void
-    onChangeError: (value: string) => void
+    value: string
     error: string
 } & InputHTMLAttributes<HTMLInputElement>
 
@@ -13,22 +12,13 @@ export const Input: React.FC<InputPropsType> = (
     {
         placeholder,
         icon,
-        onBlurSetValue,
-        onChangeError,
+        value,
         error,
         ...restProps
     }) => {
     const [onFocus, setOnFocus] = useState<boolean>(false)
-    const [text, setText] = useState<string>('')
 
-    const onBlurHandle = () => {
-        setOnFocus(false)
-        onBlurSetValue(text)
-    }
-    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setText(e.currentTarget.value)
-        onChangeError('')
-    }
+    const onBlurHandle = () => setOnFocus(false)
 
     return (
         <div className={styles.input}>
@@ -37,13 +27,12 @@ export const Input: React.FC<InputPropsType> = (
             </i>
             <input
                 type='text'
-                value={text}
-                onChange={onChangeHandler}
+                value={value}
                 onFocus={() => setOnFocus(true)}
                 onBlur={onBlurHandle}
                 {...restProps}/>
             <label
-                className={onFocus || text ? `${styles.labelCenter} ${styles.labelUp}` : styles.labelCenter}
+                className={onFocus || value !== "" ? `${styles.labelCenter} ${styles.labelUp}` : styles.labelCenter}
             >
                 {placeholder}
             </label>

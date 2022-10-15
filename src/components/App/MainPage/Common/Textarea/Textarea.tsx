@@ -3,7 +3,8 @@ import styles from './Textarea.module.scss'
 
 type TextareaPropsType = {
     icon: string
-    onBlurSetValue: (value: string) => void
+    value: string
+    onChangeText: (e: string) => void
     onChangeError: (value: string) => void
     error: string
     errorStyle: boolean
@@ -12,9 +13,9 @@ type TextareaPropsType = {
 export const Textarea: React.FC<TextareaPropsType> = (
     {
         icon,
-        onChange,
+        value,
+        onChangeText,
         placeholder,
-        onBlurSetValue,
         onChangeError,
         error,
         errorStyle,
@@ -27,7 +28,6 @@ export const Textarea: React.FC<TextareaPropsType> = (
     const [parentHeight, setParentHeight] = useState('auto')
 
     const [onFocus, setOnFocus] = useState<boolean>(false)
-    const [text, setText] = useState<string>('')
 
     useEffect(() => {
         setParentHeight(`${textAreaRef.current!.scrollHeight}px`)
@@ -38,15 +38,10 @@ export const Textarea: React.FC<TextareaPropsType> = (
         setTextAreaHeight('auto')
         setParentHeight(`${textAreaRef.current!.scrollHeight}px`)
         setTextExpand(event.target.value)
-        setText(event.currentTarget.value)
-        onChangeError('')
-        onChange && onChange(event)
+        onChangeText(event.currentTarget.value)
     }
 
-    const onBlurHandle = () => {
-        setOnFocus(false)
-        onBlurSetValue(text)
-    }
+    const onBlurHandle = () => setOnFocus(false)
 
     return (
         <div className={styles.textarea}>
@@ -56,7 +51,7 @@ export const Textarea: React.FC<TextareaPropsType> = (
                     <textarea
                         {...restProps}
                         ref={textAreaRef}
-                        value={text}
+                        value={value}
                         onFocus={() => setOnFocus(true)}
                         onBlur={onBlurHandle}
                         rows={1}
@@ -64,7 +59,7 @@ export const Textarea: React.FC<TextareaPropsType> = (
                         onChange={onChangeHandler}/>
             </div>
             <label
-                className={onFocus || text ? `${styles.labelCenter} ${styles.labelUp}` : styles.labelCenter}
+                className={onFocus || value !== "" ? `${styles.labelCenter} ${styles.labelUp}` : styles.labelCenter}
             >
                 {placeholder}
             </label>

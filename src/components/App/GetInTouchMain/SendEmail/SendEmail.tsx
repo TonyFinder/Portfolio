@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import styles from './SendEmail.module.scss';
 import {Input} from '../../MainPage/Common/Input/Input';
 import {Textarea} from '../../MainPage/Common/Textarea/Textarea';
@@ -18,13 +18,20 @@ export const SendEmail = () => {
     const [emailError, setEmailError] = useState<string>('')
     const [messageError, setMessageError] = useState<string>('')
 
-    const errorBorder = {
-        'borderBottomColor': 'red',
-    }
+    const errorBorder = {'borderBottomColor': 'red'}
 
-    const onBlurSetName = (name: string) => dispatch(changeGetInTouchData({name, email, message}))
-    const onBlurSetEmail = (email: string) => dispatch(changeGetInTouchData({name, email, message}))
-    const onBlurSetMessage = (message: string) => dispatch(changeGetInTouchData({name, email, message}))
+    const onChangeNameHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        nameError && setNameError('')
+        dispatch(changeGetInTouchData({name: e.currentTarget.value, email, message}))
+    }
+    const onChangeEmailHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        emailError && setEmailError('')
+        dispatch(changeGetInTouchData({name, email: e.currentTarget.value, message}))
+    }
+    const onChangeMessageHandler = (message: string) => {
+        messageError && setMessageError('')
+        dispatch(changeGetInTouchData({name, email, message}))
+    }
     const onClickHandler = () => {
         name === "" ? setNameError('This field have to be filled') : setNameError('')
         email === ""
@@ -46,21 +53,22 @@ export const SendEmail = () => {
 
                 <Input placeholder={'Your Name'}
                        icon={'fa-solid fa-user'}
-                       onBlurSetValue={onBlurSetName}
-                       onChangeError={setNameError}
+                       value={name}
+                       onChange={onChangeNameHandler}
                        error={nameError}
                        style={nameError ? errorBorder : {}}
                 />
                 <Input placeholder={'Your Email'}
                        icon={'fa-solid fa-envelope'}
-                       onBlurSetValue={onBlurSetEmail}
-                       onChangeError={setEmailError}
+                       value={email}
+                       onChange={onChangeEmailHandler}
                        error={emailError}
                        style={emailError ? errorBorder : {}}
                 />
                 <Textarea placeholder={'Your Message'}
                           icon={'fa-solid fa-comments'}
-                          onBlurSetValue={onBlurSetMessage}
+                          value={message}
+                          onChangeText={onChangeMessageHandler}
                           onChangeError={setMessageError}
                           error={messageError}
                           errorStyle={!!messageError}
