@@ -7,6 +7,10 @@ export type StoreType = {
     skills: SkillType[]
     portfolio: PortfolioType[]
     contacts: ContactType[]
+    aboutMe: {
+        left: AboutMeType[]
+        right: AboutMeType[]
+    }
 }
 export type SkillType = {
     id: number
@@ -35,14 +39,27 @@ export type IconsType = {
     link: string
     contactLink: string
 }
+export type AboutMeType = {
+    id: number
+    info: string
+    description: string
+}
 
 export const portfolioData: StoreType = {
     skills: [
         {id: 1, skill: 'HTML & CSS', description: 'Like to use flex methods.'},
         {id: 2, skill: 'JavaScript', description: 'Good programming language… but TypeScript is just the best!'},
-        {id: 3, skill: 'TypeScript', description: 'This is the best programming language to know. I have a very good skills here.'},
+        {
+            id: 3,
+            skill: 'TypeScript',
+            description: 'This is the best programming language to know. I have a very good skills here.'
+        },
         {id: 4, skill: 'React', description: 'I am focused here. So here is my way!'},
-        {id: 5, skill: 'Redux', description: 'If you see this portfolio, it means that I already have good knowledge here.'},
+        {
+            id: 5,
+            skill: 'Redux',
+            description: 'If you see this portfolio, it means that I already have good knowledge here.'
+        },
     ],
     portfolio: [
         {
@@ -87,14 +104,42 @@ export const portfolioData: StoreType = {
         },
     ],
     contacts: [
-        {id: 1, title: "PHONE", icon: "fa-solid fa-phone", info: "+7 902 077 2627"},
-        {id: 2, title: "EMAIL", icon: "fa-solid fa-envelope", info: "antonrozdobudko@gmail.com"},
-        {id: 3, title: "TELEGRAM", icon: "fa-solid fa-paper-plane", info: "@Anton_Rozdobudko"},
-        {id: 4, title: "ADDRESS", icon: "fa-solid fa-house-chimney", info: "Vladivostok, Russia"},
-        {id: 5, title: "SOCIAL PROFILES", icons: [
-                {id: 1, contactLink: "https://www.linkedin.com/in/anton-rozdobudko-a2622a234/", link: "https://img.icons8.com/doodle/100/000000/linkedin-circled.png"},
-                {id: 2, contactLink: "https://www.instagram.com/tonyfinder", link: "https://img.icons8.com/doodle/100/000000/instagram--v1.png"},
-                {id: 3, contactLink: "https://www.facebook.com/anton.rozdobudko", link: "https://img.icons8.com/doodle/100/000000/facebook-new.png"},
-            ]},
-    ]
+        {id: 1, title: 'PHONE', icon: 'fa-solid fa-phone', info: '+7 902 077 2627'},
+        {id: 2, title: 'EMAIL', icon: 'fa-solid fa-envelope', info: 'antonrozdobudko@gmail.com'},
+        {id: 3, title: 'TELEGRAM', icon: 'fa-solid fa-paper-plane', info: '@Anton_Rozdobudko'},
+        {id: 4, title: 'ADDRESS', icon: 'fa-solid fa-house-chimney', info: 'Vladivostok, Russia'},
+        {
+            id: 5, title: 'SOCIAL PROFILES', icons: [
+                {
+                    id: 1,
+                    contactLink: 'https://www.linkedin.com/in/anton-rozdobudko-a2622a234/',
+                    link: 'https://img.icons8.com/doodle/100/000000/linkedin-circled.png'
+                },
+                {
+                    id: 2,
+                    contactLink: 'https://www.instagram.com/tonyfinder',
+                    link: 'https://img.icons8.com/doodle/100/000000/instagram--v1.png'
+                },
+                {
+                    id: 3,
+                    contactLink: 'https://www.facebook.com/anton.rozdobudko',
+                    link: 'https://img.icons8.com/doodle/100/000000/facebook-new.png'
+                },
+            ]
+        },
+    ],
+    aboutMe: {
+        left: [
+            {id: 1, info: 'First Name', description: 'Anton'},
+            {id: 2, info: 'Last Name', description: 'Rozdobudko'},
+            {id: 3, info: 'Nationality', description: 'Russian'},
+            {id: 4, info: 'Hiring', description: 'Available'},
+        ],
+        right: [
+            {id: 1, info: 'Phone', description: '+7 902 077 2627'},
+            {id: 2, info: 'Address', description: 'Vladivostok, Russia'},
+            {id: 3, info: 'Email', description: 'antonrozdobudko@gmail.com'},
+            {id: 4, info: 'Spoken Languages', description: 'English - Russian'},
+        ]
+    }
 }

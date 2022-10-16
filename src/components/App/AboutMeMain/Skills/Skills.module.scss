@@ -1,0 +1,23 @@
+@import "src/utils/mixins";
+@import "src/utils/variables";
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  border-bottom: 1px solid #333;
+
+  .block {
+    width: 70%;
+    padding: 0 24px;
+    font-family: 'Lato', serif, Calibri, Arial;
+    color: #656c6d;
+    background: transparent;
+    font-weight: 400;
+
+  }
+
+
+}

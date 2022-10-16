@@ -4,6 +4,9 @@ import {faVcard} from '@fortawesome/free-solid-svg-icons';
 import {Header} from '../MainPage/Common/Header/Header';
 import {useCustomSelector} from '../../../bll/main/store';
 import {PageType} from '../../../bll/main/appReducer';
+import React from 'react';
+import {PersonalInfo} from './PersonalInfo/PersonalInfo';
+import {Skills} from './Skills/Skills';
 
 export const AboutMeMain = () => {
     const page = useCustomSelector<PageType>(state => state.app.page)
@@ -13,6 +16,10 @@ export const AboutMeMain = () => {
             <div className={styles.container}>
                 <CloseButton show={page === 'aboutMe'}/>
                 <Header contentFirst="About" contentSecond="Me" icon={faVcard}/>
+                <div className={page === 'aboutMe' ? styles.content : styles.contentNone}>
+                    <PersonalInfo/>
+                    <Skills/>
+                </div>
             </div>
         </>
     )

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import styles from './ContactBlock.module.scss';
 import {portfolioData} from '../../../../utils/values';
 
 export const ContactBlock = () => {
     return (
         <div className={styles.leftBlock}>
-            {portfolioData.contacts.map(contact => <>
+            {portfolioData.contacts.map(contact => <Fragment key={contact.id}>
                 <h6>{contact.title}</h6>
                 {contact.icon && <i className={`${styles.icon} ${contact.icon}`}></i>}
                 {contact.info && <span>{contact.info}</span>}
@@ -13,7 +13,7 @@ export const ContactBlock = () => {
                                                                target={'_blank'}>
                     <img src={icon.link} alt={'avatar'}/>
                 </a>)}
-            </>)}
+            </Fragment>)}
         </div>
     )
 }
