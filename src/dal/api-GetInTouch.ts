@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: 'http://localhost:3010/',
-    // baseURL: 'https://neko-back.herokuapp.com/2.0/',
+    baseURL: 'https://server-portfolio-tonyfinder.herokuapp.com/',
 })
 
 // api
