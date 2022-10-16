@@ -1,0 +1,44 @@
+@import "src/utils/variables";
+@import "src/utils/mixins";
+
+.wrapper {
+  cursor: pointer;
+  width: 100%;
+  margin: 24px 0;
+  border: 1px solid #333;
+
+  .text {
+    background: #222;
+    display: flex;
+    padding: 24px;
+    align-items: center;
+    font-size: 20px;
+    h6 {
+      color: #888;
+      text-transform: uppercase;
+      font-size: 1.15rem;
+      line-height: 110%;
+      font-weight: 400;
+      font-family: 'Lato', serif, Calibri, Arial;
+      margin: 0;
+      .icon {
+        padding-right: 13px;
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+      }
+    }
+    .selected {
+      color: #fff;
+    }
+
+  }
+  .selected {
+    background-color: $mainAccentColor;
+  }
+}
+
+.wrapper:hover {
+  border: 1px solid #464646;
+}
