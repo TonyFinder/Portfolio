@@ -25,6 +25,16 @@
   .button {
     width: 66.6666666667%;
     height: 42px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  .buttonDisable {
+    cursor: auto;
+  }
+  .buttonDisable:active, .buttonDisable:hover, .buttonDisable:focus {
+    transform: none;
+    box-shadow: none;
+    color: #fff;
   }
 
 }

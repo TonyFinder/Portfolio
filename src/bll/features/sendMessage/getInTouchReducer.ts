@@ -2,6 +2,7 @@ import {FormDataType, formGetInTouchAPI} from '../../../dal/api-GetInTouch';
 import {AppThunk} from '../../main/store';
 import {changeSendingMessageStatus} from '../../main/appReducer';
 import {SendingStatusType} from '../../../utils/enums';
+import {showError, showSuccess} from '../../../utils/functions';
 
 let initialState: GetInTouchStateType = {
     name: '',
@@ -27,9 +28,10 @@ export const sendMessageTC = (data: FormDataType): AppThunk => (dispatch) => {
     formGetInTouchAPI.sendEmail(data)
         .then(() => {
             dispatch(changeGetInTouchData({name: '', email: '', message: ''}))
+            showSuccess("Message has been sent", dispatch)
         })
         .catch(() => {
-            alert("Error")
+            showError("ERROR! Message has not been sent. Please try again later", dispatch)
         })
         .finally(() => dispatch(changeSendingMessageStatus(SendingStatusType.disabled)))
 }

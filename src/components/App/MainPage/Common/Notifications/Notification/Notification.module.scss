@@ -1,0 +1,65 @@
+@import "src/utils/mixins";
+@import "src/utils/variables";
+
+.notificationItem {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 0 10px 0 0;
+  overflow: hidden;
+  animation: SlideRight 0.4s;
+  margin-top: 10px;
+  animation-fill-mode: forwards;
+  width: 300px;
+  background-color: transparent;
+
+  @media (max-width: 390px) {
+    width: 250px;
+  }
+
+  &.exit {
+    animation: SlideLeft 0.4s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes SlideLeft {
+    0% {
+      margin-left: 100%;
+    }
+    100% {
+      margin-left: 0;
+    }
+  }
+
+  @keyframes SlideRight {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: 100%;
+    }
+  }
+
+  .message {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    background: #a7e7f8;
+
+    &.error {
+      background-color: #fb6d6d;
+    }
+  }
+
+  .bar {
+    height: 10px;
+    background-color: tomato;
+
+    &.success {
+      background-color: $mainAccentColor;
+    }
+
+    &.error {
+      background-color: #ff1d1d;
+    }
+  }
+}
+

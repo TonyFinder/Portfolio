@@ -9,10 +9,12 @@ import {
     GetInTouchStateType,
     sendMessageTC
 } from '../../../../bll/features/sendMessage/getInTouchReducer';
+import {SendingStatusType} from '../../../../utils/enums';
 
 export const SendEmail = () => {
     const dispatch = useAppDispatch()
     const {name, email, message} = useCustomSelector<GetInTouchStateType>(state => state.getInTouch)
+    const loading = useCustomSelector<SendingStatusType>(state => state.app.sendingStatus)
 
     const [nameError, setNameError] = useState<string>('')
     const [emailError, setEmailError] = useState<string>('')
@@ -33,16 +35,16 @@ export const SendEmail = () => {
         dispatch(changeGetInTouchData({name, email, message}))
     }
     const onClickHandler = () => {
-        name === "" ? setNameError('This field have to be filled') : setNameError('')
-        email === ""
+        name === '' ? setNameError('This field have to be filled') : setNameError('')
+        email === ''
             ? setEmailError('This field have to be filled')
             : /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)
                 ? setEmailError('')
                 : setEmailError('Email is not correct')
-        message === "" ? setMessageError('This field have to be filled') : setMessageError('')
+        message === '' ? setMessageError('This field have to be filled') : setMessageError('')
 
-        name !== "" && email !== "" && /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)
-        && message !== "" && dispatch(sendMessageTC({name, email, message}))
+        name !== '' && email !== '' && /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)
+        && message !== '' && dispatch(sendMessageTC({name, email, message}))
     }
 
     return (
@@ -51,35 +53,42 @@ export const SendEmail = () => {
             <p>If you want to leave me a message, please fill out the form below and I will reply you
                 shortly.</p>
 
-                <Input placeholder={'Your Name'}
-                       icon={'fa-solid fa-user'}
-                       value={name}
-                       onChange={onChangeNameHandler}
-                       error={nameError}
-                       style={nameError ? errorBorder : {}}
+            <Input placeholder={'Your Name'}
+                   icon={'fa-solid fa-user'}
+                   value={name}
+                   onChange={onChangeNameHandler}
+                   error={nameError}
+                   style={nameError ? errorBorder : {}}
+                   disabled={!!loading}
+            />
+            <Input placeholder={'Your Email'}
+                   icon={'fa-solid fa-envelope'}
+                   value={email}
+                   onChange={onChangeEmailHandler}
+                   error={emailError}
+                   style={emailError ? errorBorder : {}}
+                   disabled={!!loading}
+            />
+            <Textarea placeholder={'Your Message'}
+                      icon={'fa-solid fa-comments'}
+                      value={message}
+                      onChangeText={onChangeMessageHandler}
+                      onChangeError={setMessageError}
+                      error={messageError}
+                      errorStyle={!!messageError}
+                      disabled={!!loading}
+            />
+            {loading === SendingStatusType.active
+                ? <Button className={`${styles.button} ${styles.buttonDisable}`}
+                          text={'Loading...'}
+                          icon={''}
                 />
-                <Input placeholder={'Your Email'}
-                       icon={'fa-solid fa-envelope'}
-                       value={email}
-                       onChange={onChangeEmailHandler}
-                       error={emailError}
-                       style={emailError ? errorBorder : {}}
+                : <Button className={styles.button}
+                          text={'Send message'}
+                          icon={'fa-solid fa-paper-plane'}
+                          onClick={onClickHandler}
                 />
-                <Textarea placeholder={'Your Message'}
-                          icon={'fa-solid fa-comments'}
-                          value={message}
-                          onChangeText={onChangeMessageHandler}
-                          onChangeError={setMessageError}
-                          error={messageError}
-                          errorStyle={!!messageError}
-                />
-                <Button className={styles.button}
-                        text="Send message"
-                        icon="fa-solid fa-paper-plane"
-                        targetBlank
-                        onClick={onClickHandler}
-                />
-
+            }
         </div>
     )
 }

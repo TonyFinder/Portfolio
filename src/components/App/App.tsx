@@ -9,6 +9,7 @@ import {useAppDispatch, useCustomSelector} from '../../bll/main/store';
 import {AppInitialStateType, changeCurrentPage, setShowProfileItem} from '../../bll/main/appReducer';
 import {AboutMeMain} from './AboutMeMain/AboutMeMain';
 import {GetInTouchMain} from './GetInTouchMain/GetInTouchMain';
+import {NotificationProvider} from './MainPage/Common/Notifications/NotificationProvider/NotificationProvider';
 
 export const App = () => {
     const dispatch = useAppDispatch()
@@ -37,6 +38,8 @@ export const App = () => {
         <div className={styles.body}>
             <div className={styles.shadowLeft}></div>
             <div className={styles.shadowRight}></div>
+
+            <NotificationProvider/>
 
             <div className={styles.up}>
                 <Main/>

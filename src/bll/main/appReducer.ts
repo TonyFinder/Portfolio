@@ -1,10 +1,12 @@
 import {SendingStatusType} from '../../utils/enums';
+import {NotificationType} from '../../components/App/MainPage/Common/Notifications/Notification/Notification';
 
 let initialState: AppInitialStateType = {
     page: 'all',
     showProfileItem: false,
     portfolioNumber: 0,
     sendingStatus: SendingStatusType.disabled,
+    notifications: []
 }
 
 export const appReducer = (state: AppInitialStateType = initialState, action: AppActionTypes): AppInitialStateType => {
@@ -17,6 +19,10 @@ export const appReducer = (state: AppInitialStateType = initialState, action: Ap
             return {...state, showProfileItem: action.show}
         case 'APP/SET-SENDING-MESSAGE-STATUS':
             return {...state, sendingStatus: action.sendingStatus}
+        case "APP/ADD-NOTIFICATION":
+            return {...state, notifications: [{...action.payload}, ...state.notifications]}
+        case "APP/REMOVE-NOTIFICATION":
+            return {...state, notifications: state.notifications.filter(f => f.id !== action.id)}
         default:
             return state
     }
@@ -27,6 +33,8 @@ export const changeCurrentPage = (page: PageType) => ({type: 'APP/CURRENT-PAGE',
 export const changePortfolioNumber = (number: number) => ({type: 'APP/CURRENT-PORTFOLIO', number} as const)
 export const setShowProfileItem = (show: boolean) => ({type: 'APP/SHOW-PROFILE-ITEM', show} as const)
 export const changeSendingMessageStatus = (sendingStatus: SendingStatusType) => ({type: 'APP/SET-SENDING-MESSAGE-STATUS', sendingStatus} as const)
+export const addNotification = (payload: NotificationType) => ({type: 'APP/ADD-NOTIFICATION', payload} as const)
+export const removeNotification = (id: string) => ({type: 'APP/REMOVE-NOTIFICATION', id} as const)
 
 // thunks
 
@@ -36,10 +44,13 @@ export type AppActionTypes =
     | ReturnType<typeof changePortfolioNumber>
     | ReturnType<typeof setShowProfileItem>
     | ReturnType<typeof changeSendingMessageStatus>
+    | ReturnType<typeof addNotification>
+    | ReturnType<typeof removeNotification>
 export type AppInitialStateType = {
     page: PageType
     showProfileItem: boolean
     portfolioNumber: number
     sendingStatus: SendingStatusType
+    notifications: NotificationType[] | []
 }
 export type PageType = 'all' | 'portfolio' | 'aboutMe' | 'getInTouch'
