@@ -10,9 +10,14 @@ export type StoreType = {
     aboutMe: {
         left: AboutMeType[]
         right: AboutMeType[]
+        lists: {
+            experience: ExperienceType[]
+            education: ExperienceType[]
+            skills: SkillRateType[]
+        }
     }
 }
-export type SkillType = {
+    export type SkillType = {
     id: number
     skill: string
     description: string
@@ -43,6 +48,18 @@ export type AboutMeType = {
     id: number
     info: string
     description: string
+}
+export type ExperienceType = {
+    id: number
+    title: string
+    place: string
+    dates: string
+    info: string
+}
+export type SkillRateType = {
+    id: number
+    skill: string
+    grade: number
 }
 
 export const portfolioData: StoreType = {
@@ -140,6 +157,101 @@ export const portfolioData: StoreType = {
             {id: 2, info: 'Address', description: 'Vladivostok, Russia'},
             {id: 3, info: 'Email', description: 'antonrozdobudko@gmail.com'},
             {id: 4, info: 'Spoken Languages', description: 'English - Russian'},
-        ]
+        ],
+        lists: {
+            experience: [
+                {
+                    id: 1,
+                    title: 'Frontend Developer',
+                    place: 'Freelance',
+                    dates: '2022',
+                    info: 'Worked mostly for commercial project on pedicure product. Made video editing for online-course from scratch as well.',
+                },
+                {
+                    id: 2,
+                    title: 'Frontend Developer',
+                    place: 'IT-Incubator',
+                    dates: '2021 - 2022',
+                    info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium orci sit amet mi ullamcorper',
+                },
+                {
+                    id: 3,
+                    title: 'Category manager',
+                    place: 'DNS Retail',
+                    dates: '2017 - 2021',
+                    info: 'Creating a product line for private label',
+                },
+            ],
+            education: [
+                {
+                    id: 1,
+                    title: 'Certificate',
+                    place: 'It-Incubator',
+                    dates: '2021-2022',
+                    info: 'React developer with a deep Typescript skills',
+                },
+                {
+                    id: 2,
+                    title: 'Masters degree',
+                    place: 'Far Eastern National University',
+                    dates: '2015 - 2018',
+                    info: 'Information systems',
+                },
+            ],
+            skills: [
+                {
+                    id: 1,
+                    skill: 'React',
+                    grade: 4.5,
+                },
+                {
+                    id: 2,
+                    skill: 'TypeScript',
+                    grade: 4.5,
+                },
+                {
+                    id: 3,
+                    skill: 'JavaScript',
+                    grade: 4,
+                },
+
+                {
+                    id: 4,
+                    skill: 'Redux',
+                    grade: 4.5,
+                },
+                {
+                    id: 5,
+                    skill: 'HTML',
+                    grade: 5,
+                },
+                {
+                    id: 6,
+                    skill: 'CSS/SCSS',
+                    grade: 5,
+                },
+                {
+                    id: 9,
+                    skill: 'Formik',
+                    grade: 4.5,
+                },
+                {
+                    id: 10,
+                    skill: 'Axios',
+                    grade: 4.5,
+                },
+                {
+                    id: 7,
+                    skill: 'Photoshop',
+                    grade: 3.5,
+                },
+                {
+                    id: 8,
+                    skill: 'Premiere Pro',
+                    grade: 3.5,
+                },
+
+            ]
+        }
     }
 }

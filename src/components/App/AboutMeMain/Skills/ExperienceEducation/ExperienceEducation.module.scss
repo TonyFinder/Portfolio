@@ -1,0 +1,78 @@
+@import "src/utils/mixins";
+@import "src/utils/variables";
+
+.experience {
+  position: relative;
+  cursor: default;
+  padding: 0;
+  box-shadow: none;
+  min-height: $listHeight;
+  transition: .3s ease transform;
+  transform: scale(1) translate(0, 0);
+  z-index: 2;
+  border: 1px solid #333;
+  .header {
+    cursor: default;
+    border-bottom: 1px solid #333;
+    background: #151515;
+    padding: 24px;
+    text-align: center;
+    .text {
+      color: $mainAccentColor;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 21px;
+      transition: .3s ease opacity;
+      i {
+        padding-right: 10px;
+      }
+    }
+  }
+  .infoWrapper {
+    background: #222;
+    .infoField {
+      padding: 24px;
+      //display: flex;
+      //flex-flow: column;
+      font-family: 'Lato', sans-serif;
+      .blockExperience {
+        position: relative;
+        font-family: 'Lato', sans-serif;
+        h6 {
+          margin-bottom: 10px;
+          color: #fff;
+          font-size: 15px;
+          font-weight: 400;
+          margin-top: 0;
+          text-transform: uppercase;
+          span {
+            font-weight: 600;
+          }
+        }
+        .dates {
+          color: #aaa;
+          font-size: 13px;
+          i {
+            padding-right: 10px;
+          }
+        }
+        p {
+          color: #eee;
+          font-size: 14px;
+          padding-bottom: 20px;
+          margin-top: 5px;
+          margin-bottom: 0;
+          line-height: 2;
+          font-family: 'Lato', sans-serif;
+          font-weight: 400;
+        }
+        .separator {
+          background: $mainAccentColor;
+          height: 2px;
+          width: 70px;
+          margin-bottom: 24px;
+        }
+      }
+    }
+  }
+}

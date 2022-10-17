@@ -1,0 +1,55 @@
+@import "src/utils/mixins";
+@import "src/utils/variables";
+
+.experience {
+  position: relative;
+  cursor: default;
+  padding: 0;
+  box-shadow: none;
+  min-height: $listHeight;
+  transition: .3s ease transform;
+  transform: scale(1) translate(0, 0);
+  z-index: 2;
+  border: 1px solid #333;
+  .header {
+    cursor: default;
+    border-bottom: 1px solid #333;
+    background: #151515;
+    padding: 24px;
+    text-align: center;
+    .text {
+      color: $mainAccentColor;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 21px;
+      transition: .3s ease opacity;
+      i {
+        padding-right: 10px;
+      }
+    }
+  }
+  .infoWrapper {
+    background: #222;
+    .infoField {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 24px;
+      font-family: 'Lato', sans-serif;
+      //border: 1px solid white;
+      .skillWrapper {
+        width: 50%;
+        //border: 1px solid yellowgreen;
+        h6 {
+          margin-bottom: 0;
+          color: #fff;
+          font-size: 15px;
+          margin-top: 0;
+          text-transform: uppercase;
+          font-weight: 400;
+          text-align: center;
+          //border: 1px solid white;
+        }
+      }
+    }
+  }
+}
