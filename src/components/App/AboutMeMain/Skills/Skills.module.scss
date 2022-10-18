@@ -5,13 +5,13 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 50px 0;
+  //align-items: center;
+  padding: 100px 0 50px 0;
   border-bottom: 1px solid #333;
 
   .block {
     display: flex;
-    width: 70%; min-height: 500px;
+    width: 70%;
     padding: 0 24px;
     font-family: 'Lato', serif, Calibri, Arial;
     color: #656c6d;
@@ -26,7 +26,7 @@
       .lists {
         position: relative;
         max-width: 645px;
-
+        //min-height: 500px;
       }
     }
   }

@@ -172,7 +172,7 @@ export const portfolioData: StoreType = {
                     title: 'Frontend Developer',
                     place: 'IT-Incubator',
                     dates: '2021 - 2022',
-                    info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium orci sit amet mi ullamcorper',
+                    info: 'Studying and making a team project',
                 },
                 {
                     id: 3,

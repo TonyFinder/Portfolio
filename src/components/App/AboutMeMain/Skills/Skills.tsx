@@ -17,18 +17,22 @@ export const Skills = () => {
                 <div className={styles.skills}>
                     <div className={styles.lists}>
 
-                        <ExperienceEducation data={experience.experience}
-                                             header={'Experience'}
-                                             icon={'fa-solid fa-briefcase'}
-                        />
-                        <ExperienceEducation data={experience.education}
-                                             header={'Education'}
-                                             icon={'fa-solid fa-graduation-cap'}
-                        />
-                        <SkillsList data={experience.skills}
-                                    header={'Skills'}
-                                    icon={'fa-solid fa-star'}
-                        />
+                            <ExperienceEducation position={'second'}
+                                                 data={experience.experience}
+                                                 header={'Experience'}
+                                                 icon={'fa-solid fa-briefcase'}
+                            />
+                            <ExperienceEducation position={'first'}
+                                                 data={experience.education}
+                                                 header={'Education'}
+                                                 icon={'fa-solid fa-graduation-cap'}
+                            />
+                            <SkillsList position={'third'}
+                                        data={experience.skills}
+                                        header={'Skills'}
+                                        icon={'fa-solid fa-star'}
+                            />
+
                     </div>
                 </div>
 

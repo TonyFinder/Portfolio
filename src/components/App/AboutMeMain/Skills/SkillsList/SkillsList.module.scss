@@ -3,10 +3,10 @@
 
 .experience {
   position: relative;
-  cursor: default;
-  padding: 0;
-  box-shadow: none;
-  min-height: $listHeight;
+  //cursor: default;
+  //padding: 0;
+  //box-shadow: none;
+  //min-height: $listHeight;
   transition: .3s ease transform;
   transform: scale(1) translate(0, 0);
   z-index: 2;
@@ -30,6 +30,7 @@
   }
   .infoWrapper {
     background: #222;
+    min-height: $listHeight;
     .infoField {
       display: flex;
       flex-wrap: wrap;
@@ -52,4 +53,18 @@
       }
     }
   }
+}
+.hidePositionSecond {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  transition: .3s ease transform;
+  transform: scale(0.90) translate(0, -55px);
+  z-index: -1;
+}
+.hidePositionThird {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  transition: .3s ease transform;
+  transform: scale(0.80) translate(0, -120px);
+  z-index: -2;
 }

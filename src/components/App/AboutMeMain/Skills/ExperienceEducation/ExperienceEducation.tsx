@@ -6,15 +6,23 @@ type ExperienceEducationPropsType = {
     data: ExperienceType[]
     header: string
     icon: string
+    position: PositionType
 }
+export type PositionType = 'first' | 'second' | 'third'
 
 export const ExperienceEducation: React.FC<ExperienceEducationPropsType> = (
     {
-        data, header, icon,
+        data, header, icon, position,
     }) => {
 
+    const place = position === 'first'
+        ? styles.experience
+        : position === 'second'
+            ? `${styles.experience} ${styles.hidePositionSecond}`
+            : `${styles.experience} ${styles.hidePositionThird}`
+
     return (
-        <div className={styles.experience}>
+        <div className={place}>
             <div className={styles.header}>
                 <div className={styles.text}>
                     <i className={icon}></i>
