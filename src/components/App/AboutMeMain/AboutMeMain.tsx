@@ -7,18 +7,20 @@ import {PageType} from '../../../bll/main/appReducer';
 import React from 'react';
 import {PersonalInfo} from './PersonalInfo/PersonalInfo';
 import {Skills} from './Skills/Skills';
+import {Footer} from './Footer/Footer';
 
 export const AboutMeMain = () => {
     const page = useCustomSelector<PageType>(state => state.app.page)
 
     return (
         <>
-            <div className={styles.container}>
+            <div className={page === 'aboutMe' ? `${styles.container} ${styles.containerScroll}` : styles.container}>
                 <CloseButton show={page === 'aboutMe'}/>
                 <Header contentFirst="About" contentSecond="Me" icon={faVcard}/>
                 <div className={page === 'aboutMe' ? styles.content : styles.contentNone}>
                     <PersonalInfo/>
                     <Skills/>
+                    <Footer/>
                 </div>
             </div>
         </>

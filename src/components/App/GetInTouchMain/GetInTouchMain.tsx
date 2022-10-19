@@ -12,7 +12,7 @@ export const GetInTouchMain = () => {
     const page = useCustomSelector<PageType>(state => state.app.page)
 
     return (
-        <div className={styles.container}>
+        <div className={page === 'getInTouch' ? `${styles.container} ${styles.containerScroll}` : styles.container}>
             <CloseButton show={page === 'getInTouch'}/>
             <Header contentFirst="Get" contentSecond="In Touch" icon={faEnvelopeOpen}/>
             <div className={page === 'getInTouch' ? styles.content : styles.contentNone}>

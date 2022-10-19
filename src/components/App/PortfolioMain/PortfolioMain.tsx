@@ -9,11 +9,17 @@ import {PortfolioItems} from './PortfolioItems/PortfolioItems';
 
 export const PortfolioMain = () => {
     let dispatch = useAppDispatch()
-    const {page, showProfileItem} = useCustomSelector<AppInitialStateType>(state => state.app)
+    const {page, showProfileItem, closedPortfolioItem} = useCustomSelector<AppInitialStateType>(state => state.app)
 
-    const styleContainer = (page !== 'all') && !showProfileItem
-        ? styles.container
-        : `${styles.container} ${styles.makeSmaller}`
+    const styleContainer = (page === 'portfolio') && showProfileItem
+        ? `${styles.container} ${styles.makeSmaller}`
+        : (page === 'portfolio') && !showProfileItem && closedPortfolioItem
+            ? `${styles.container} ${styles.containerZoom}`
+            : (page === 'portfolio') && !showProfileItem && !closedPortfolioItem
+                ? `${styles.container} ${styles.containerScroll}`
+                : styles.container
+
+    console.log(styleContainer)
 
     const onClickPortfolioChanger = (index: number) => {
         dispatch(changePortfolioNumber(index))
@@ -27,7 +33,7 @@ export const PortfolioMain = () => {
                 <Header contentFirst="My" contentSecond="Portfolio" icon={faSuitcase}/>
                 <div className={page === 'portfolio' ? styles.content : styles.contentNone}>
                     {portfolioData.portfolio.map((project, i) => <div key={project.id}
-                                                                 className={page === 'portfolio' ? styles.big : styles.bigNone}>
+                                                                      className={page === 'portfolio' ? styles.big : styles.bigNone}>
                         <img src={page === 'portfolio' ? project.image : ''} alt={'preview'}/>
                         <div className={styles.textBlock} onClick={() => onClickPortfolioChanger(i)}>
                             <div className={styles.text}>

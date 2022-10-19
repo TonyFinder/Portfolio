@@ -2,9 +2,9 @@
 @import "src/utils/variables";
 
 .closeButton {
-  position: absolute;
-  top: 30px;
-  right: 30px;
+  position: fixed;
+  top: 50px;
+  right: 50px;
   cursor: pointer;
   color: #ababab;
   font-size: 47px;

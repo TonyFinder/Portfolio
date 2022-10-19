@@ -5,8 +5,6 @@
   position: relative;
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
   color: white;
 
   .content {
@@ -27,4 +25,16 @@
   @keyframes content {
     @include keyframesDisplayContent;
   }
+}
+
+.containerScroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+  animation-name: scroll;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+@keyframes scroll {
+  @include keyframesDisplayContent;
 }

@@ -6,7 +6,12 @@ import {Portfolio} from './MainPage/Portfolio/Portfolio';
 import {Contact} from './MainPage/Contact/Contact';
 import {PortfolioMain} from './PortfolioMain/PortfolioMain';
 import {useAppDispatch, useCustomSelector} from '../../bll/main/store';
-import {AppInitialStateType, changeCurrentPage, setShowProfileItem} from '../../bll/main/appReducer';
+import {
+    AppInitialStateType,
+    changeCurrentPage,
+    closePortfolioItem,
+    setShowProfileItem
+} from '../../bll/main/appReducer';
 import {AboutMeMain} from './AboutMeMain/AboutMeMain';
 import {GetInTouchMain} from './GetInTouchMain/GetInTouchMain';
 import {NotificationProvider} from './MainPage/Common/Notifications/NotificationProvider/NotificationProvider';
@@ -18,9 +23,13 @@ export const App = () => {
     // Logic for leaving modal window in case ESC button is pressed
     const escFunction = (event: KeyboardEvent) => {
         if (event.code === 'Escape') {
-         showProfileItem
-                    ? dispatch(setShowProfileItem(false))
-                    : dispatch(changeCurrentPage('all'))
+            if (showProfileItem) {
+                dispatch(setShowProfileItem(false))
+                dispatch(closePortfolioItem(true))
+            } else {
+                dispatch(changeCurrentPage('all'))
+                dispatch(closePortfolioItem(false))
+            }
         }
     }
 
