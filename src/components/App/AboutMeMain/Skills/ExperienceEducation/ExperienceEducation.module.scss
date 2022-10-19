@@ -3,40 +3,16 @@
 
 .experience {
   position: relative;
-  //top: 0; bottom: 0; left: 0; right: 0;
-  //cursor: default;
-  //padding: 0;
-  //box-shadow: none;
-  //min-height: $listHeight;
-
   transition: .3s ease transform;
   transform: scale(1) translate(0, 0);
   z-index: 20;
   border: 1px solid #333;
-  .header {
-    cursor: default;
-    border-bottom: 1px solid #333;
-    background: #151515;
-    padding: 24px;
-    text-align: center;
-    .text {
-      color: $mainAccentColor;
-      text-transform: uppercase;
-      font-weight: bold;
-      font-size: 21px;
-      transition: .3s ease opacity;
-      i {
-        padding-right: 10px;
-      }
-    }
-  }
+
   .infoWrapper {
     background: #222;
     min-height: $listHeight;
     .infoField {
       padding: 24px;
-      //display: flex;
-      //flex-flow: column;
       font-family: 'Lato', sans-serif;
       .blockExperience {
         position: relative;
@@ -79,17 +55,4 @@
     }
   }
 }
-.hidePositionSecond {
-  position: absolute;
-  top: 0; bottom: 0; left: 0; right: 0;
-  transition: .3s ease transform;
-  transform: scale(0.90) translate(0, -55px);
-  z-index: -1;
-}
-.hidePositionThird {
-  position: absolute;
-  top: 0; bottom: 0; left: 0; right: 0;
-  transition: .3s ease transform;
-  transform: scale(0.80) translate(0, -110px);
-  z-index: -2;
-}
+@include hidePositions;

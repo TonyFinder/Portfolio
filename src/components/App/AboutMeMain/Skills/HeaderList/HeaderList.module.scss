@@ -1,0 +1,23 @@
+@import "src/utils/mixins";
+@import "src/utils/variables";
+
+.header {
+  cursor: default;
+  border-bottom: 1px solid #333;
+  background: #151515;
+  padding: 24px;
+  text-align: center;
+  .text {
+    color: $mainAccentColor;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 21px;
+    transition: .3s ease opacity;
+    i {
+      padding-right: 10px;
+    }
+  }
+}
+.headerBack {
+  cursor: pointer;
+}

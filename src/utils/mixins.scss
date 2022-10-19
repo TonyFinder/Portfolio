@@ -103,6 +103,30 @@
   }
 }
 
+//About Me. Hiding lists to a second and third places
+@mixin hidePositions() {
+  .hidePositionSecond {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    transition: .3s ease transform;
+    transform: scale(0.90) translate(0, -55px);
+    z-index: 2;
+  }
+  .hidePositionSecond:hover {
+    transform: scale(0.90) translate(0, -65px);
+  }
+  .hidePositionThird {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    transition: .3s ease transform;
+    transform: scale(0.80) translate(0, -120px);
+    z-index: 1;
+  }
+  .hidePositionThird:hover {
+    transform: scale(0.80) translate(0, -130px);
+  }
+}
+
 // Main blocks - full screen
 @mixin mainBigBlock($animationName) {
   position: absolute;
