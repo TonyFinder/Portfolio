@@ -19,8 +19,6 @@ export const PortfolioMain = () => {
                 ? `${styles.container} ${styles.containerScroll}`
                 : styles.container
 
-    console.log(styleContainer)
-
     const onClickPortfolioChanger = (index: number) => {
         dispatch(changePortfolioNumber(index))
         dispatch(setShowProfileItem(true))

@@ -15,10 +15,28 @@
   min-height: 100vh;
   background: $mainBackground;
 
+  @media (max-width: 800px) {
+    //border: 1px solid red;
+    justify-content: unset;
+    height: 100vh;
+  }
+
   .up, .down {
     display: flex;
     justify-content: space-evenly;
     width: 100vw;
+
+    @media (max-width: 800px) {
+      //display: unset;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding: 0 $marginBetweenBlocks;
+      //border: 1px solid white;
+    }
+    @media (max-width: 480px) {
+      padding: 0 ($marginBetweenBlocks - 0.5vh);
+    }
   }
 
   .shadowLeft {

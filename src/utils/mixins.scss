@@ -19,7 +19,20 @@
     width: calc(50vw - 30px);
     height: calc(50vh - 30px);
     background: $blocksBackground;
+    //border: 1px solid yellowgreen;
     @include transitionToSmallBlocks;
+
+    @media (max-width: 800px) {
+      //border: 1px solid green;
+      width: 100%;
+      //margin: 10px;
+      margin-bottom: $marginBetweenBlocks;
+      height: $widthSmallBlock;
+    }
+    @media (max-width: 480px) {
+      margin-bottom: $marginBetweenBlocks - 0.5vh;
+      height: $widthSmallBlock - 2vh;
+    }
 
     .hideBlock {
       background: $blocksBackground;
@@ -36,7 +49,8 @@
         position: relative;
         font-family: 'Lato', serif, Calibri, Arial;
         text-transform: uppercase;
-        font-size: 40px;
+        font-size: $fontSizeDoubleColors;
+        //font-size: 40px;
         font-weight: 800;
 
         &::before {
@@ -54,22 +68,27 @@
           top: 100%;
           content: $first;
           color: $mainAccentColor;
+          opacity: 0;
           @include transitionBlocks;
         }
 
+        @include fontAdaptation($fontSizeDoubleColors);
+        @include fontAdaptationSmallBlocks($fontSizeDoubleColors)
       }
 
       .textBlockSecond {
         position: relative;
         font-family: 'Lato', serif, Calibri, Arial;
         text-transform: uppercase;
-        font-size: 40px;
+        font-size: $fontSizeDoubleColors;
+        //font-size: 40px;
         font-weight: 800;
         &::before {
           position: absolute;
           white-space: nowrap;
           content: $second;
           top: -100%;
+          opacity: 0;
           color: white;
           @include transitionBlocks;
         }
@@ -82,21 +101,38 @@
           color: $mainAccentColor;
           @include transitionBlocks;
         }
+
+        @include fontAdaptation($fontSizeDoubleColors);
+        @include fontAdaptationSmallBlocks($fontSizeDoubleColors)
+
       }
     }
 
   }
   .container:hover .textBlockFirst:before {
-    top: -100%;
+    top: -100%; opacity: 0;
   }
   .container:hover .textBlockFirst:after {
-    top: 0;
+    top: 0; opacity: 1;
   }
+  .container:not(:hover) .textBlockFirst:before {
+    top: 0; opacity: 1;
+  }
+  .container:not(:hover) .textBlockFirst:after {
+    top: 100%; opacity: 0;
+  }
+
   .container:hover .textBlockSecond:before {
-    top: 0;
+    top: 0; opacity: 1;
   }
   .container:hover .textBlockSecond:after {
-    top: 100%;
+    top: 100%; opacity: 0;
+  }
+  .container:not(:hover) .textBlockSecond:before {
+    top: -100%; opacity: 0;
+  }
+  .container:not(:hover) .textBlockSecond:after {
+    top: 0; opacity: 1;
   }
   .makeSmaller {
     transform: scale(0.7);
@@ -208,5 +244,28 @@
   }
   100% {
     transform: scale(0.1);
+  }
+}
+
+// !!!Adaptation!!!
+
+//Adaptation for main page
+@mixin fontAdaptation($fontIndicator) {
+  @media (max-width: 1600px) {
+    font-size: $fontIndicator*0.9;
+  }
+  @media (max-width: 1200px) {
+    font-size: $fontIndicator*0.8;
+  }
+  @media (max-width: 1050px) {
+    font-size: $fontIndicator*0.6;
+  }
+  @media (max-width: 800px) {
+    font-size: $fontIndicator*0.7;
+  }
+}
+@mixin fontAdaptationSmallBlocks($fontIndicator) {
+  @media (max-width: 480px) {
+    font-size: $fontIndicator*0.6;
   }
 }

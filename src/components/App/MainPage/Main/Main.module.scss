@@ -1,4 +1,5 @@
 @import "../../../../utils/variables";
+@import "../../../../utils/mixins";
 
 .container {
   display: flex;
@@ -10,19 +11,38 @@
   color: #fff;
   font-family: 'Lato', serif, Calibri, Arial;
   transition: 1s ease;
+  //border: 1px solid red;
+
+  @media (max-width: 800px) {
+    width: 100%;
+    height: 100vh - $widthSmallBlock*3 - $marginBetweenBlocks*3;
+  }
+  @media (max-width: 480px) {
+    height: 100vh - ($widthSmallBlock - 2vh)*3 - ($marginBetweenBlocks - 0.5vh)*3;
+  }
 
   .first {
-    font-size: 24px;
+    font-size: $fontSizeGreetings;
+    //font-size: 24px;
+    @include fontAdaptation($fontSizeGreetings);
   }
   .second {
-    font-size: 44px;
+    font-size: $fontSizeName;
+    text-align: center;
+    //font-size: 44px;
     font-weight: 800;
     padding: 20px 0;
+
+    @include fontAdaptation($fontSizeName);
+
   }
   .third {
-    font-size: 28px;
+    font-size: $fontSizeTyping;
     font-weight: 800;
     color: $mainAccentColor;
+
+    @include fontAdaptation($fontSizeTyping);
+
   }
 }
 .makeSmaller {
