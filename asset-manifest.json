@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.6fe4277b.css",
+    "main.css": "/Portfolio/static/css/main.fde5b82b.css",
     "main.js": "/Portfolio/static/js/main.45cce211.js",
     "static/js/787.cfd8f164.chunk.js": "/Portfolio/static/js/787.cfd8f164.chunk.js",
     "static/media/social.jpg": "/Portfolio/static/media/social.be0944987badabf79514.jpg",
@@ -8,12 +8,12 @@
     "static/media/pedicure3.jpg": "/Portfolio/static/media/pedicure3.bfa1bac8836e89f32f6b.jpg",
     "static/media/cards.jpg": "/Portfolio/static/media/cards.6e798eb69a463128cc8b.jpg",
     "index.html": "/Portfolio/index.html",
-    "main.6fe4277b.css.map": "/Portfolio/static/css/main.6fe4277b.css.map",
+    "main.fde5b82b.css.map": "/Portfolio/static/css/main.fde5b82b.css.map",
     "main.45cce211.js.map": "/Portfolio/static/js/main.45cce211.js.map",
     "787.cfd8f164.chunk.js.map": "/Portfolio/static/js/787.cfd8f164.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6fe4277b.css",
+    "static/css/main.fde5b82b.css",
     "static/js/main.45cce211.js"
   ]
 }
