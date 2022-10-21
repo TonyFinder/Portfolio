@@ -18,7 +18,7 @@
     height: 100vh - $widthSmallBlock*3 - $marginBetweenBlocks*3;
   }
   @media (max-width: 480px) {
-    height: 100vh - ($widthSmallBlock - 2vh)*3 - ($marginBetweenBlocks - 0.5vh)*3;
+    height: 85vh - ($widthSmallBlock - 2vh)*3 - ($marginBetweenBlocks - 0.5vh)*3;
   }
 
   .first {
@@ -47,4 +47,7 @@
 }
 .makeSmaller {
   transform: scale(0.7);
+  @media (max-width: 800px) {
+    transform: scale(1);
+  }
 }
