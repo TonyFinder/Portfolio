@@ -150,9 +150,18 @@
     transition: .3s ease transform;
     transform: scale(0.90) translate(0, -55px);
     z-index: 2;
+    @media (max-width: 800px) {
+      position: unset;
+      transition: unset;
+      transform: unset;
+      z-index: unset;
+    }
   }
   .hidePositionSecond:hover {
     transform: scale(0.90) translate(0, -65px);
+    @media (max-width: 800px) {
+      transform: unset;
+    }
   }
   .hidePositionThird {
     position: absolute;
@@ -160,9 +169,18 @@
     transition: .3s ease transform;
     transform: scale(0.80) translate(0, -120px);
     z-index: 1;
+    @media (max-width: 800px) {
+      position: unset;
+      transition: unset;
+      transform: unset;
+      z-index: unset;
+    }
   }
   .hidePositionThird:hover {
     transform: scale(0.80) translate(0, -130px);
+    @media (max-width: 800px) {
+      transform: unset;
+    }
   }
 }
 
@@ -222,6 +240,42 @@
     }
   }
 }
+@mixin keyframesSmallToBigMainBlocks800($animationNameBig, $animationNameSmall, $left, $right, $top, $bottom){
+  @keyframes #{$animationNameBig} {
+    0% {
+      background: unset;
+      width: calc(100vw - 40px);
+      height: calc(15vh - 40px);
+      left: $left; right: $right; top: $top; bottom: $bottom;
+    }
+    50% {
+      background: $blocksBackground;
+    }
+    100% {
+      background: $blocksBackground;
+      width: calc(100vw - 40px);
+      height: calc(100vh - 40px);
+      left: $left; right: $right; top: $top; bottom: $bottom;
+    }
+  }
+  @keyframes #{$animationNameSmall} {
+    0% {
+      width: calc(100vw - 40px);
+      height: calc(100vh - 40px);
+      left: $left; right: $right; top: $top; bottom: $bottom;
+      background: $blocksBackground;
+    }
+    70% {
+      background: $blocksBackground;
+      width: calc(100vw - 40px);
+      height: calc(15vh - 40px);
+      left: $left; right: $right; top: $top; bottom: $bottom;
+    }
+    100% {
+      background: unset;
+    }
+  }
+}
 @mixin keyframesSmallToBigMainBlocksMobile($animationNameBig, $animationNameSmall){
   @keyframes #{$animationNameBig} {
     0% {
@@ -236,7 +290,7 @@
     100% {
       background: $blocksBackground;
       width: calc(100vw);
-      height: calc(85vh);
+      height: $mobileHeight;
       left: 0; right: 0; top: unset; bottom: 0;
     }
   }
@@ -244,7 +298,7 @@
     0% {
       background: $blocksBackground;
       width: calc(100vw);
-      height: calc(85vh);
+      height: $mobileHeight;
       left: 0; right: 0; top: unset; bottom: 0;
     }
     90% {

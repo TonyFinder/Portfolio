@@ -7,13 +7,19 @@
   transform: scale(1) translate(0, 0);
   z-index: 20;
   border: 1px solid #333;
-
+  @media (max-width: 800px) {
+    margin-bottom: 25px;
+  }
   .infoWrapper {
     background: #222;
     min-height: $listHeight;
+    @media (max-width: 800px) {
+      min-height: auto;
+    }
     .infoField {
       padding: 24px;
       font-family: 'Lato', sans-serif;
+
       .blockExperience {
         position: relative;
         font-family: 'Lato', sans-serif;

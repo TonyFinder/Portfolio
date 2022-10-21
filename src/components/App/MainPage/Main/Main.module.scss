@@ -18,7 +18,7 @@
     height: 100vh - $widthSmallBlock*3 - $marginBetweenBlocks*3;
   }
   @media (max-width: 480px) {
-    height: 85vh - ($widthSmallBlock - 2vh)*3 - ($marginBetweenBlocks - 0.5vh)*3;
+    height: $mobileHeight - ($widthSmallBlock - 2vh)*3 - ($marginBetweenBlocks - 0.5vh)*3;
   }
 
   .first {

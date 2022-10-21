@@ -11,6 +11,9 @@
   .infoWrapper {
     background: #222;
     min-height: $listHeight;
+    @media (max-width: 800px) {
+      min-height: auto;
+    }
     .infoField {
       display: flex;
       flex-wrap: wrap;
@@ -18,6 +21,9 @@
       font-family: 'Lato', sans-serif;
       .skillWrapper {
         width: 50%;
+        @media (max-width: 380px) {
+          width: 100%;
+        }
         h6 {
           margin-bottom: 0;
           color: #fff;

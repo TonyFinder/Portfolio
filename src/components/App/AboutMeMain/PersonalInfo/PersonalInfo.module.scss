@@ -10,12 +10,26 @@
   border-bottom: 1px solid #333;
 
   .block {
-    width: 70%;
+    width: $widthBigScreen;
     padding: 0 24px;
     font-family: 'Lato', serif, Calibri, Arial;
     color: #656c6d;
     background: transparent;
     font-weight: 400;
+    //border: 1px solid red;
+
+    @media (max-width: 2150px) {
+      width: $widthScreen2150;
+    }
+    @media (max-width: 1800px) {
+      width: $widthScreen1800;
+    }
+    @media (max-width: 1550px) {
+      width: $widthScreen1550;
+    }
+    @media (max-width: 1250px) {
+      width: $widthScreen1250;
+    }
 
     h6 {
       text-transform: uppercase;
@@ -32,8 +46,15 @@
     }
 
     .info {
-      width: 70%;
+      width: 100%;
       margin-bottom: 20px;
+
+      @media (max-width: 1800px) {
+        width: 90%;
+      }
+      @media (max-width: 800px) {
+        width: 100%;
+      }
 
       p {
         margin: 0 auto;
@@ -47,9 +68,13 @@
 
     .infoColumns {
       display: flex;
-
+      //border: 1px solid white;
+      @media (max-width: 800px) {
+        flex-direction: column;
+      }
       .column {
         width: 50%;
+        //border: 1px solid red;
 
         .line {
           font-family: 'Lato', sans-serif;
@@ -73,6 +98,12 @@
       height: 42px;
       margin-top: 10px;
       cursor: pointer;
+      background: none;
+      border-color: $mainAccentColor;
+      color: $mainAccentColor;
+      @media (max-width: 600px) {
+        width: 100%;
+      }
     }
   }
 

@@ -17,6 +17,10 @@
     font-size: 55px;
     font-weight: 900;
     text-transform: uppercase;
+    @media (max-width: 480px) {
+      font-size: 40px;
+      margin: 30px 0;
+    }
 
     :first-child {
       color: #fff;

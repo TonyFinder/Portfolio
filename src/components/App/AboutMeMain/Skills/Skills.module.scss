@@ -7,23 +7,51 @@
   justify-content: center;
   padding: 100px 0 50px 0;
   border-bottom: 1px solid #333;
-
+  @media (max-width: 800px) {
+    padding: 50px 0;
+  }
   .block {
     display: flex;
-    justify-content: space-between;
-    width: 70%;
+    width: $widthBigScreen;
     padding: 0 24px;
     font-family: 'Lato', serif, Calibri, Arial;
     color: #656c6d;
     background: transparent;
     font-weight: 400;
-
+    //border: 1px solid red;
+    @media (max-width: 2150px) {
+      width: $widthScreen2150;
+    }
+    @media (max-width: 1800px) {
+      width: $widthScreen1800;
+    }
+    @media (max-width: 1550px) {
+      width: $widthScreen1550;
+    }
+    @media (max-width: 1250px) {
+      width: $widthScreen1250;
+    }
     .skills {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: calc(100%/3*2);
-      padding-left: 24px;
+      //border: 1px solid white;
+      @media (max-width: 1800px) {
+        justify-content: unset;
+        padding-left: 24px;
+      }
+      @media (max-width: 800px) {
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+      }
+
       .lists {
         position: relative;
+        width: 100%;
         max-width: 645px;
+        //border: 1px solid red;
       }
     }
   }

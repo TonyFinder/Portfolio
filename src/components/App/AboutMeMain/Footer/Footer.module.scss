@@ -4,17 +4,35 @@
 .container {
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 50px 0;
+  //border: 1px solid red;
 
   .block {
+    display: flex;
+    justify-content: center;
+    width: $widthBigScreen;
     font-family: 'Lato', serif, Calibri, Arial;
-
+    //border: 1px solid white;
+    @media (max-width: 2150px) {
+      width: $widthScreen2150;
+    }
+    @media (max-width: 1800px) {
+      width: $widthScreen1800;
+    }
+    @media (max-width: 1550px) {
+      width: $widthScreen1550;
+    }
+    @media (max-width: 1250px) {
+      width: $widthScreen1250;
+    }
   }
   .smallBlocks {
     display: flex;
-    justify-content: flex-start;
-
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    //border: 1px solid red;
   }
 
 }

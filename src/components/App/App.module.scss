@@ -24,8 +24,8 @@
   @media (max-width: 480px) {
     //border: 1px solid red;
     justify-content: unset;
-    height: 85vh;
-    //min-height: 85vh;
+    height: $mobileHeight;
+    //min-height: $mobileHeight;
 
 
     /*&::before {
@@ -112,6 +112,9 @@
     @include keyframesSmallToBigMainBlocks(portfolioBlock, portfolioBackToSmall, 20px, unset, unset, 20px);
   }
   @media (max-width: 800px) {
+    @include keyframesSmallToBigMainBlocks800(portfolioBlock, portfolioBackToSmall, 20px, 20px, unset, 20px);
+  }
+  @media (max-width: 480px) {
     @include keyframesSmallToBigMainBlocksMobile(portfolioBlock, portfolioBackToSmall);
   }
 
@@ -122,10 +125,13 @@
   .aboutMeMainNone {
     @include mainSmallBlock(aboutMeBlockBackToSmall);
   }
-  @media (min-width: 801px) {
+  @media (min-width: 481px) {
     @include keyframesSmallToBigMainBlocks(aboutMeBlock, aboutMeBlockBackToSmall, unset, 20px, 20px, unset);
   }
   @media (max-width: 800px) {
+    @include keyframesSmallToBigMainBlocks800(aboutMeBlock, aboutMeBlockBackToSmall, 20px, 20px, unset, 20px);
+  }
+  @media (max-width: 480px) {
     @include keyframesSmallToBigMainBlocksMobile(aboutMeBlock, aboutMeBlockBackToSmall);
   }
 
@@ -135,10 +141,13 @@
   .getInTouchMainNone {
     @include mainSmallBlock(getInTouchBlockBackToSmall);
   }
-  @media (min-width: 801px) {
+  @media (min-width: 481px) {
     @include keyframesSmallToBigMainBlocks(getInTouchBlock, getInTouchBlockBackToSmall, unset, 20px, unset, 20px);
   }
   @media (max-width: 800px) {
+    @include keyframesSmallToBigMainBlocks800(getInTouchBlock, getInTouchBlockBackToSmall, 20px, 20px, unset, 20px);
+  }
+  @media (max-width: 480px) {
     @include keyframesSmallToBigMainBlocksMobile(getInTouchBlock, getInTouchBlockBackToSmall);
   }
 }
