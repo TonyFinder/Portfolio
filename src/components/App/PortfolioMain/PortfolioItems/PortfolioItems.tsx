@@ -14,36 +14,41 @@ export const PortfolioItems = () => {
     return (
         <div className={showProfileItem ? styles.container : `${styles.container} ${styles.containerNone}`}>
             <CloseButton show={showProfileItem}/>
-            <div className={styles.innerBlock} key={name}>
+            <div className={styles.innerBlock} key={portfolioNumber}>
                 <div className={styles.picture}>
-                    <img src={image} alt={'project image'}/>
+                    <img src={image} alt={'project'}/>
                 </div>
                 <div className={styles.description}>
                     <h3>{name}</h3>
 
                     <div className={styles.list}>
                         <i className="fa-solid fa-circle-info"></i>
-                        <span className={styles.main}>Project Description:&nbsp;</span><span className={styles.secondText}>{description}</span>
+                        <span className={styles.main}>Project Description:&nbsp;</span><span
+                        className={styles.secondText}>{description}</span>
                     </div>
 
                     <div className={styles.list}>
                         <i className="fa-solid fa-highlighter"></i>
-                        <span className={styles.main}>Project Highlights:&nbsp;</span><span className={styles.secondText}>{highlights}</span>
+                        <span className={styles.main}>Project Highlights:&nbsp;</span><span
+                        className={styles.secondText}>{highlights}</span>
                     </div>
 
                     <div className={styles.list}>
                         <i className="fa-solid fa-gears"></i>
-                        <span className={styles.main}>Used Technologies:&nbsp;</span><span className={styles.secondText}>{technologies}</span>
+                        <span className={styles.main}>Used Technologies:&nbsp;</span><span
+                        className={styles.secondText}>{technologies}</span>
                     </div>
 
                     <div className={styles.line}></div>
                     <div className={styles.buttons}>
-                        <Button link={demo} text='demo' icon='fa-solid fa-arrow-up-right-from-square' targetBlank/>
-                        <Button link={code} text='code' icon='fa-solid fa-code' targetBlank/>
+                        <Button link={demo} text="demo" icon="fa-solid fa-arrow-up-right-from-square" targetBlank/>
+                        <Button link={code} text="code" icon="fa-solid fa-code" targetBlank/>
                     </div>
                 </div>
+
             </div>
             <Pagination/>
+
         </div>
     )
 }
