@@ -16,7 +16,6 @@
     color: #656c6d;
     background: transparent;
     font-weight: 400;
-    //border: 1px solid red;
 
     @media (max-width: 2150px) {
       width: $widthScreen2150;
@@ -68,13 +67,14 @@
 
     .infoColumns {
       display: flex;
-      //border: 1px solid white;
       @media (max-width: 800px) {
         flex-direction: column;
       }
       .column {
         width: 50%;
-        //border: 1px solid red;
+        @media (max-width: 800px) {
+          width: 100%;
+        }
 
         .line {
           font-family: 'Lato', sans-serif;

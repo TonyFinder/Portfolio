@@ -2,9 +2,19 @@
 @import "src/utils/variables";
 
 .rightBlock {
-  width: 66.6666666667%;
+  width: 100%/3*2;
   max-width: 700px;
   padding: 0 24px;
+  @media (max-width: 1000px) {
+    width: 50%;
+  }
+  @media (max-width: 700px) {
+    margin-top: 40px;
+    width: 100%;
+  }
+  @media (max-width: 480px) {
+    padding: 0;
+  }
 
   h6 {
     font-weight: 700;
@@ -27,6 +37,9 @@
     height: 42px;
     margin-bottom: 20px;
     cursor: pointer;
+    @media (max-width: 1000px) {
+      width: 100%;
+    }
   }
   .buttonDisable {
     cursor: auto;

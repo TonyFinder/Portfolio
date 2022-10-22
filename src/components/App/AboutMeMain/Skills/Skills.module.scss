@@ -18,7 +18,6 @@
     color: #656c6d;
     background: transparent;
     font-weight: 400;
-    //border: 1px solid red;
     @media (max-width: 2150px) {
       width: $widthScreen2150;
     }
@@ -36,7 +35,6 @@
       align-items: center;
       justify-content: center;
       width: calc(100%/3*2);
-      //border: 1px solid white;
       @media (max-width: 1800px) {
         justify-content: unset;
         padding-left: 24px;
@@ -51,7 +49,6 @@
         position: relative;
         width: 100%;
         max-width: 645px;
-        //border: 1px solid red;
       }
     }
   }

@@ -12,10 +12,18 @@
     justify-content: center;
     align-items: flex-start;
     width: 100%;
+    padding: 24px;
     animation-name: content;
     animation-duration: 1.2s;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
+    @media (max-width: 700px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    @media (max-width: 480px) {
+      padding: 12px;
+    }
   }
 
   .contentNone {

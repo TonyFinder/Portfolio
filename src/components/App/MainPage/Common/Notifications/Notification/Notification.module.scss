@@ -11,8 +11,10 @@
   width: 300px;
   background-color: transparent;
 
-  @media (max-width: 390px) {
-    width: 250px;
+  @media (max-width: 480px) {
+    width: 100vw;
+    border-radius: 0;
+    margin: 0 0 10px 0;
   }
 
   &.exit {

@@ -5,7 +5,6 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  //align-items: center;
   justify-content: space-evenly;
   top: 0;
   bottom: 0;
@@ -16,7 +15,6 @@
   animation-duration: 0.6s;
   animation-timing-function: ease-in;
   z-index: 15;
-  //border: 1px solid red;
   .innerBlock {
     position: relative;
     display: flex;
@@ -29,13 +27,11 @@
     animation-duration: 0.4s;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
-    //border: 1px solid red;
     @media (max-width: 650px) {
       flex-direction: column;
       justify-content: unset;
       align-items: unset;
       padding: 0 20px;
-      //border: 1px solid red;
     }
     
     .picture {
@@ -47,7 +43,6 @@
       height: auto;
       min-width: 250px; min-height: 250px * 0.8;
       margin: 20px;
-      //border: 1px solid yellowgreen;
       @media (max-width: 650px) {
         min-width: unset; min-height: unset;
         max-width: unset;
@@ -70,7 +65,6 @@
       height: auto;
       margin: 20px;
       color: white;
-      //border: 1px solid white;
       @media (max-width: 650px) {
         min-width: unset; min-height: unset;
         max-width: unset;
@@ -86,11 +80,9 @@
         text-transform: uppercase;
         line-height: 110%;
         font-family: 'Lato', serif, Calibri, Arial;
-        //border: 1px solid red;
       }
       .list {
         margin-top: 20px;
-        //border: 1px solid red;
         i {
           padding-right: 10px;
           font-size: 14px;
@@ -113,7 +105,6 @@
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
-        //border: 1px solid white;
         button {
           a {
             width: 300px;
