@@ -6,12 +6,17 @@ type ButtonPropsType = {
     text: string
     icon: string
     targetBlank?: boolean
+    borderColor?: string
 } & ButtonHTMLAttributes<HTMLButtonElement>
 
-export const Button: React.FC<ButtonPropsType> = ({link, text, icon, targetBlank, ...restProps}) => {
+export const Button: React.FC<ButtonPropsType> = (
+    {
+        link, text, icon, targetBlank, borderColor, ...restProps
+    }) => {
+
     return (
-        <a className={styles.wrapper} href={link} target={targetBlank ? '_blank' : ''}>
-            <button {...restProps}>
+        <a className={styles.wrapper} href={link} rel="noreferrer" target={targetBlank ? '_blank' : ''}>
+            <button {...restProps} style={borderColor ? {borderColor: borderColor} : {border: 'none'}}>
                 {text}
                 <i className={`${styles.icon} ${icon}`}/>
             </button>

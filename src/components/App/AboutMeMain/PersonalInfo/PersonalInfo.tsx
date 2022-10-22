@@ -22,17 +22,19 @@ export const PersonalInfo = () => {
                     <div className={styles.column}>
                         {portfolioData.aboutMe.left.map(item => <div key={item.id} className={styles.line}>
                             <span className={styles.first}>{item.info}:&nbsp;</span>
-                            <span className={styles.second}>{item.description}</span>
+                            {item.link && <a href={item.link} rel="noreferrer" target={item.target ? '_blank' : ''} className={styles.second}>{item.description}</a>}
+                            {!item.link && <span className={styles.second}>{item.description}</span>}
                         </div>)}
                     </div>
                     <div className={styles.column}>
                         {portfolioData.aboutMe.right.map(item => <div key={item.id} className={styles.line}>
                             <span className={styles.first}>{item.info}:&nbsp;</span>
-                            <span className={styles.second}>{item.description}</span>
+                            {item.link && <a href={item.link} rel="noreferrer" target={item.target ? '_blank' : ''} className={styles.second}>{item.description}</a>}
+                            {!item.link && <span className={styles.second}>{item.description}</span>}
                         </div>)}
                     </div>
                 </div>
-                <Button className={styles.button} text={'download resume'} icon={'fa-solid fa-file-pdf'}/>
+                <Button borderColor={'#61d9fa'} className={styles.button} text={'download resume'} icon={'fa-solid fa-file-pdf'}/>
             </div>
         </div>
     )

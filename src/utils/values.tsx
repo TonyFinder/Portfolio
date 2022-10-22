@@ -37,6 +37,8 @@ export type ContactType = {
     title: string
     icon?: string
     info?: string
+    link?: string
+    target?: boolean
     icons?: IconsType[]
 }
 export type IconsType = {
@@ -48,6 +50,8 @@ export type AboutMeType = {
     id: number
     info: string
     description: string
+    link?: string
+    target?: boolean
 }
 export type ExperienceType = {
     id: number
@@ -121,10 +125,10 @@ export const portfolioData: StoreType = {
         },
     ],
     contacts: [
-        {id: 1, title: 'PHONE', icon: 'fa-solid fa-phone', info: '+7 902 077 2627'},
-        {id: 2, title: 'EMAIL', icon: 'fa-solid fa-envelope', info: 'antonrozdobudko@gmail.com'},
-        {id: 3, title: 'TELEGRAM', icon: 'fa-solid fa-paper-plane', info: '@Anton_Rozdobudko'},
-        {id: 4, title: 'ADDRESS', icon: 'fa-solid fa-house-chimney', info: 'Vladivostok, Russia'},
+        {id: 1, title: 'PHONE', icon: 'fa-solid fa-phone', info: '+7 902 077 2627', link: 'tel:+79020772627'},
+        {id: 2, title: 'EMAIL', icon: 'fa-solid fa-envelope', info: 'antonrozdobudko@gmail.com', link: 'mailto:antonrozdobudko@gmail.com'},
+        {id: 3, title: 'TELEGRAM', icon: 'fa-solid fa-paper-plane', info: '@Anton_Rozdobudko', link: 'https://t.me/Anton_Rozdobudko', target: true},
+        {id: 4, title: 'ADDRESS', icon: 'fa-solid fa-house-chimney', info: 'Vladivostok, Russia', link: 'https://goo.gl/maps/JVwJ1j12hNmR3KGA9', target: true},
         {
             id: 5, title: 'SOCIAL PROFILES', icons: [
                 {
@@ -153,9 +157,9 @@ export const portfolioData: StoreType = {
             {id: 4, info: 'Hiring', description: 'Available'},
         ],
         right: [
-            {id: 1, info: 'Phone', description: '+7 902 077 2627'},
-            {id: 2, info: 'Address', description: 'Vladivostok, Russia'},
-            {id: 3, info: 'Email', description: 'antonrozdobudko@gmail.com'},
+            {id: 1, info: 'Phone', description: '+7 902 077 2627', link: 'tel:+79020772627'},
+            {id: 2, info: 'Address', description: 'Vladivostok, Russia', link: 'https://goo.gl/maps/JVwJ1j12hNmR3KGA9', target: true},
+            {id: 3, info: 'Email', description: 'antonrozdobudko@gmail.com', link: 'mailto:antonrozdobudko@gmail.com'},
             {id: 4, info: 'Spoken Languages', description: 'English - Russian'},
         ],
         lists: {
