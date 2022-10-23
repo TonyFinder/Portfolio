@@ -16,11 +16,15 @@
     }
     .infoField {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
       padding: 24px;
       font-family: 'Lato', sans-serif;
       .skillWrapper {
-        width: 50%;
+        width: calc(100%/3);
+        @media (max-width: 1050px) {
+          width: calc(100%/2);
+        }
         @media (max-width: 380px) {
           width: 100%;
         }

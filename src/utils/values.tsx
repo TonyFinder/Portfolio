@@ -210,49 +210,79 @@ export const portfolioData: StoreType = {
                 },
                 {
                     id: 2,
-                    skill: 'TypeScript',
-                    grade: 4.5,
-                },
-                {
-                    id: 3,
-                    skill: 'JavaScript',
-                    grade: 4,
-                },
-
-                {
-                    id: 4,
                     skill: 'Redux',
                     grade: 4.5,
                 },
                 {
+                    id: 3,
+                    skill: 'TypeScript',
+                    grade: 4.5,
+                },
+
+                {
+                    id: 4,
+                    skill: 'JavaScript',
+                    grade: 4,
+                },
+                {
                     id: 5,
-                    skill: 'HTML',
+                    skill: 'CSS / SCSS',
                     grade: 5,
                 },
                 {
                     id: 6,
-                    skill: 'CSS/SCSS',
+                    skill: 'Axios',
                     grade: 5,
                 },
                 {
+                    id: 7,
+                    skill: 'TDD',
+                    grade: 5,
+                },
+                {
+                    id: 8,
+                    skill: 'Material UI',
+                    grade: 4.5,
+                },
+                {
                     id: 9,
-                    skill: 'Formik',
+                    skill: 'Styled Components',
                     grade: 4.5,
                 },
                 {
                     id: 10,
-                    skill: 'Axios',
+                    skill: 'Storybook',
+                    grade: 4,
+                },
+{
+                    id: 11,
+                    skill: 'Formik / Redux form',
                     grade: 4.5,
                 },
                 {
-                    id: 7,
+                    id: 12,
+                    skill: 'React Router',
+                    grade: 4.5,
+                },
+                {
+                    id: 13,
+                    skill: 'Redux Thunk',
+                    grade: 5,
+                },
+{
+                    id: 14,
+                    skill: 'Git / GitHub',
+                    grade: 4.5,
+                },
+                {
+                    id: 15,
                     skill: 'Photoshop',
                     grade: 3.5,
                 },
                 {
-                    id: 8,
+                    id: 16,
                     skill: 'Premiere Pro',
-                    grade: 3.5,
+                    grade: 4,
                 },
 
             ]
