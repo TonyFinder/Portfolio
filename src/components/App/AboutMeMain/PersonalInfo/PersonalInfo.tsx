@@ -15,7 +15,7 @@ export const PersonalInfo = () => {
                     <p>
                         I'm a Frontend React Developer, currently based in Vladivostok, Russia.
                         I have good hands-on experience in creating and maintaining complex projects.
-                        I easily learn new technologies.
+                        I always strive to learn new technologies.
                     </p>
                 </div>
                 <div className={styles.infoColumns}>

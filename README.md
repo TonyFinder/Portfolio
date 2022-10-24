@@ -1,7 +1,7 @@
 # Portfolio
 
 ## Project description
-This project is made to demonstrate my projects and my skills.
+This project is made to demonstrate my projects and skills.
 
 ## Stack
 
