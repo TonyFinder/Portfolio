@@ -19,13 +19,10 @@
     width: calc(50vw - 30px);
     height: calc(50vh - 30px);
     background: $blocksBackground;
-    //border: 1px solid yellowgreen;
     @include transitionToSmallBlocks;
 
     @media (max-width: 800px) {
-      //border: 1px solid green;
       width: 100%;
-      //margin: 10px;
       margin-bottom: $marginBetweenBlocks;
       height: $widthSmallBlock;
     }
@@ -50,7 +47,6 @@
         font-family: 'Lato', serif, Calibri, Arial;
         text-transform: uppercase;
         font-size: $fontSizeDoubleColors;
-        //font-size: 40px;
         font-weight: 800;
 
         &::before {
@@ -81,7 +77,6 @@
         font-family: 'Lato', serif, Calibri, Arial;
         text-transform: uppercase;
         font-size: $fontSizeDoubleColors;
-        //font-size: 40px;
         font-weight: 800;
         &::before {
           position: absolute;
@@ -326,22 +321,13 @@
 }
 @mixin keyframesShowingItemPortfolio {
   0% {
-    transform: scale(0.1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
   }
   100% {
-    transform: scale(1);
-  }
-}
-@mixin keyframesHidingItemPortfolio {
-  0% {
-    transform: scale(1);
-  }
-  90% {
-    display: flex;
-  }
-  100% {
-    display: none;
-    transform: scale(0.1);
+    opacity: 1;
   }
 }
 

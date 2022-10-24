@@ -15,7 +15,7 @@ export const ButtonBig: React.FC<ButtonBigPropsType> = ({text, icon, selected, o
             <div className={selected ? `${styles.text} ${styles.selected}` : styles.text}>
                 <h6 className={selected ? styles.selected : ''}>
                     <i className={`${styles.icon} ${icon}`}/>
-                    {text}
+                    <span className={styles.title}>{text}</span>
                 </h6>
             </div>
         </div>

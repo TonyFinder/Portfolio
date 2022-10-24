@@ -14,7 +14,7 @@ export const PortfolioItems = () => {
     return (
         <div className={showProfileItem ? styles.container : `${styles.container} ${styles.containerNone}`}>
             <CloseButton show={showProfileItem}/>
-            <div className={styles.innerBlock} key={portfolioNumber}>
+            <div className={styles.innerBlock}>
                 <div className={styles.picture}>
                     <img src={image} alt={'project'}/>
                 </div>

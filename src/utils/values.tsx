@@ -87,7 +87,7 @@ export const portfolioData: StoreType = {
             id: 1,
             name: 'Pedicure master',
             description: 'Commercial project which has been made for the pedicure master',
-            technologies: 'React, Redux, TypeScript, ReactRouter, Jest, SCSS, MUI, Git, GitHub',
+            technologies: 'React, Redux, TypeScript, ReactRouter, Jest, SCSS, MUI',
             highlights: 'Based on the Material UI component library. Adapted for all popular screens.',
             demo: 'https://pedicure-cabinet.ru/',
             code: 'https://github.com/TonyFinder/Pedicure-master',
@@ -97,7 +97,7 @@ export const portfolioData: StoreType = {
             id: 2,
             name: 'To-Do list',
             description: 'Educational project. Developing a To-Do list',
-            technologies: 'React, Redux, TypeScript, React Router, Jest, SCSS, MUI, Storybook, Axios, Postman, Formik, Redux Thunk, Git, GitHub',
+            technologies: 'React, Redux, TypeScript, React Router, Jest, SCSS, MUI, Storybook, Axios, Postman, Formik, Redux Thunk',
             highlights: 'Good to check all the CRUD operations',
             demo: 'https://TonyFinder.github.io/Todolist/',
             code: 'https://github.com/TonyFinder/Todolist',
@@ -107,7 +107,7 @@ export const portfolioData: StoreType = {
             id: 3,
             name: 'Cards study',
             description: 'A team work project. An application for studying using question cards',
-            technologies: 'React, Redux, TypeScript, React Router, Styled Components, Jest, SCSS, Axios, Postman, ReduxThunk, Git, GitHub',
+            technologies: 'React, Redux, TypeScript, React Router, Styled Components, Jest, SCSS, Axios, Postman, ReduxThunk',
             highlights: 'Priority of custom components. Custom form validation. Adapted for all popular screens.',
             demo: 'https://tonyfinder.github.io/Cards-study/',
             code: 'https://github.com/TonyFinder/Cards-study',
@@ -117,7 +117,7 @@ export const portfolioData: StoreType = {
             id: 4,
             name: 'Social network',
             description: 'Educational project. A plain social network.',
-            technologies: 'React, Redux, TypeScript, React Router, Jest, CSS3, Storybook, Axios, Postman, Redux Form, Redux Thunk, Git, GitHub',
+            technologies: 'React, Redux, TypeScript, React Router, Jest, CSS3, Storybook, Axios, Postman, Redux Form, Redux Thunk',
             highlights: 'The only project that is made using class components to understand working with classes',
             demo: 'https://tonyfinder.github.io/Social-network/',
             code: 'https://github.com/TonyFinder/Social-network',
@@ -132,10 +132,16 @@ export const portfolioData: StoreType = {
         {
             id: 5, title: 'SOCIAL PROFILES', icons: [
                 {
+                    id: 0,
+                    contactLink: 'https://github.com/TonyFinder',
+                    link: 'https://img.icons8.com/doodle/100/000000/github--v1.png'
+                },
+                {
                     id: 1,
                     contactLink: 'https://www.linkedin.com/in/anton-rozdobudko-a2622a234/',
                     link: 'https://img.icons8.com/doodle/100/000000/linkedin-circled.png'
                 },
+
                 {
                     id: 2,
                     contactLink: 'https://www.instagram.com/tonyfinder',

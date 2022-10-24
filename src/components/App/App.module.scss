@@ -15,32 +15,13 @@
   width: 100%;
   background: $mainBackground;
   height: 100vh;
-  //min-height: -webkit-fill-available;
 
   @media (max-width: 800px) {
-    //border: 1px solid red;
     justify-content: unset;
   }
   @media (max-width: 480px) {
-    //border: 1px solid red;
     justify-content: unset;
     height: $mobileHeight;
-    //min-height: $mobileHeight;
-
-
-    /*&::before {
-      position: absolute;
-      //white-space: nowrap;
-      content: 'Potrfolio';
-      bottom: calc(-15vh / 2);
-      color: $mainAccentColor;
-      text-transform: uppercase;
-      font-weight: 600;
-      letter-spacing: 5px;
-      font-size: $fontSizeGreetings;
-      @include fontAdaptation($fontSizeGreetings);
-      transform: rotate3d(-0.9, -0.9, -0.5, 30deg);
-    }*/
   }
 
   .up, .down {
@@ -49,12 +30,10 @@
     width: 100vw;
 
     @media (max-width: 800px) {
-      //display: unset;
       flex-direction: column;
       align-items: center;
       width: 100%;
       padding: 0 $marginBetweenBlocks;
-      //border: 1px solid white;
     }
     @media (max-width: 480px) {
       padding: 0 ($marginBetweenBlocks - 0.5vh);
