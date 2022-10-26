@@ -1,7 +1,7 @@
 import todo1 from '../images/portfolio/todoFinal1.jpg'
 import social from '../images/portfolio/social.jpg'
-import pedicure from '../images/portfolio/pedicure3.jpg'
-import question from '../images/portfolio/cards.jpg'
+import pedicure from '../images/portfolio/fromSite/pedicure-2.png'
+import question from '../images/portfolio/fromSite/cards.png'
 
 export type StoreType = {
     skills: SkillType[]
@@ -31,6 +31,7 @@ export type PortfolioType = {
     demo: string
     code: string
     image: string
+    youTube?: string
 }
 export type ContactType = {
     id: number
@@ -84,6 +85,17 @@ export const portfolioData: StoreType = {
     ],
     portfolio: [
         {
+            id: 3,
+            name: 'Cards study',
+            description: 'A team work project. An application for studying using question cards.',
+            technologies: 'React, Redux, TypeScript, React Router, Styled Components, Jest, SCSS, Axios, Postman, ReduxThunk.',
+            highlights: 'Priority of custom components. Custom form validation. Adapted for all popular screens.',
+            demo: 'https://tonyfinder.github.io/Cards-study/',
+            code: 'https://github.com/TonyFinder/Cards-study',
+            image: question,
+            youTube: "_bJh8Has7YQ"
+        },
+        {
             id: 1,
             name: 'Pedicure master',
             description: 'Commercial project which has been made for the pedicure master.',
@@ -101,17 +113,7 @@ export const portfolioData: StoreType = {
             highlights: 'Good to check all the CRUD operations.',
             demo: 'https://TonyFinder.github.io/Todolist/',
             code: 'https://github.com/TonyFinder/Todolist',
-            image: todo1
-        },
-        {
-            id: 3,
-            name: 'Cards study',
-            description: 'A team work project. An application for studying using question cards.',
-            technologies: 'React, Redux, TypeScript, React Router, Styled Components, Jest, SCSS, Axios, Postman, ReduxThunk.',
-            highlights: 'Priority of custom components. Custom form validation. Adapted for all popular screens.',
-            demo: 'https://tonyfinder.github.io/Cards-study/',
-            code: 'https://github.com/TonyFinder/Cards-study',
-            image: question
+            image: todo1,
         },
         {
             id: 4,
@@ -121,7 +123,7 @@ export const portfolioData: StoreType = {
             highlights: 'The only project that is made using class components to understand working with classes.',
             demo: 'https://tonyfinder.github.io/Social-network/',
             code: 'https://github.com/TonyFinder/Social-network',
-            image: social
+            image: social,
         },
     ],
     contacts: [

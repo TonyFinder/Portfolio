@@ -1,0 +1,7 @@
+@import "src/utils/mixins";
+@import "src/utils/variables";
+
+.container {
+  border: none;
+  @include youTubeSteps;
+}

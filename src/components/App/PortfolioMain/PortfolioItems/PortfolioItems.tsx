@@ -6,17 +6,22 @@ import {CloseButton} from '../../MainPage/Common/CloseButton/CloseButton';
 import {Pagination} from '../../MainPage/Common/Pagination/Pagination';
 import React from 'react';
 import {Button} from '../../MainPage/Common/Button/Button';
+import {YouTubeVideo} from '../../MainPage/Common/YouTubeVideo/YouTubeVideo';
 
 export const PortfolioItems = () => {
     const {showProfileItem, portfolioNumber} = useCustomSelector<AppInitialStateType>(state => state.app)
-    const {name, description, technologies, highlights, demo, image, code} = portfolioData.portfolio[portfolioNumber]
+    const {name, description, technologies, highlights, demo, image, code, youTube} = portfolioData.portfolio[portfolioNumber]
 
     return (
         <div className={showProfileItem ? styles.container : `${styles.container} ${styles.containerNone}`}>
             <CloseButton show={showProfileItem}/>
             <div className={styles.innerBlock}>
                 <div className={styles.picture}>
-                    <img src={image} alt={'project'}/>
+                    {
+                     youTube
+                        ? <YouTubeVideo videoCode={youTube ? youTube : ""} />
+                        : <img src={image} alt={'project'}/>
+                    }
                 </div>
                 <div className={styles.description}>
                     <h3>{name}</h3>
