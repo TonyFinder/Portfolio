@@ -13,7 +13,7 @@ export const PersonalInfo = () => {
                 </h6>
                 <div className={styles.info}>
                     <p>
-                        I'm a Frontend React Developer, currently based in Vladivostok, Russia.
+                        I'm a Frontend React Developer, currently based in Charlotte, NC, USA.
                         I have good hands-on experience in creating and maintaining complex projects.
                         I always strive to learn new technologies.
                     </p>
